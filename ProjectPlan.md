@@ -1,12 +1,10 @@
 # Project Plan
 
-*This is the template for your project plan. The parts in italics are concise explanations of what should go in the corresponding sections and should not appear in the final document.*
-
-**Author**: \<person or team name\>
+**Author**: \<HZ-TASK Force\>
 
 ## 1 Introduction
 
-*Here you introduce the product. Keep this  clean and simple, one or two sentences at most.*
+Even in 2020, alot of public health entities utilize PDFs, Websites, Excel for data handling - although not  in the best ways. For NLP processing, there should be a tool to help make this process easier for researchers, developers and the like.
 
 ## 2 Process Description
 
@@ -19,8 +17,11 @@
 
 ## 3 Team
 
-*Describe the team and their roles (there may be more roles than there are team members)*
-
-- *Team members' names*
-- *Roles, with a short description of each role*
-- *Table showing which team member(s) has which role(s)*
+| Name | Role | Responsiblity |
+| ------ | ------ | ------ | 
+| SeGe Jung | Project Manager | responsible for understanding the project requirements and aligning the team to work efficienty towards project deliverables. Also responsible for creating project plan, roadmap, and resource allocation. |
+| GitHub |  | |
+| Google Drive |  | |
+| OneDrive | | |
+| Medium |  | |
+| Google Analytics |  | |
