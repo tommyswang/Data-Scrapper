@@ -4,6 +4,7 @@
 
 ## 1 Introduction
 
+Project assigned to HZ-TASK Force is Data Scrapper. 
 Many public health entities utiize various formats such as PDFs, Websites, Excel, etc for data handling. This causes a lot of inefficiencies and complexity. The goal of this project is to build a tool that will enable easier NLP processing and data hangling for researchers and develepors.
 
 ## 2 Process Description
