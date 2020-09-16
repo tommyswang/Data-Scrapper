@@ -1,10 +1,10 @@
 # Project Plan
 
-**Author**: \<HZ-TASK Force\>
+**Author**: HZ-TASK Force
 
 ## 1 Introduction
 
-Even in 2020, alot of public health entities utilize PDFs, Websites, Excel for data handling - although not  in the best ways. For NLP processing, there should be a tool to help make this process easier for researchers, developers and the like.
+Many public health entities utiize various formats such as PDFs, Websites, Excel, etc for data handling. This causes a lot of inefficiencies and complexity. The goal of this project is to make data hangling easier for researchers and develepors for NLP processing by building a tool to help.
 
 ## 2 Process Description
 
@@ -20,8 +20,8 @@ Even in 2020, alot of public health entities utilize PDFs, Websites, Excel for d
 | Name | Role | Responsiblity |
 | ------ | ------ | ------ | 
 | SeGe Jung | Project Manager | responsible for understanding the project requirements and aligning the team to work efficienty towards project deliverables. Also responsible for creating project plan, roadmap, and resource allocation. |
-| NAME | ROLE | |
-|  |  | |
-|  | | |
-|  |  | |
-|  |  | |
+| Allen Leigh | Developer | |
+| Zahiduzzaman Biswas | Developer | |
+| Tommy Wang | QA | |
+| Hongyu Cheng | Developer | |
+| Kanishkah Anwari | Developer | |
