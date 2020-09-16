@@ -20,8 +20,8 @@ Even in 2020, alot of public health entities utilize PDFs, Websites, Excel for d
 | Name | Role | Responsiblity |
 | ------ | ------ | ------ | 
 | SeGe Jung | Project Manager | responsible for understanding the project requirements and aligning the team to work efficienty towards project deliverables. Also responsible for creating project plan, roadmap, and resource allocation. |
-| GitHub |  | |
-| Google Drive |  | |
-| OneDrive | | |
-| Medium |  | |
-| Google Analytics |  | |
+| NAME | ROLE | |
+|  |  | |
+|  | | |
+|  |  | |
+|  |  | |
