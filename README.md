@@ -1,3 +1,4 @@
 # Data-Scrapper
 
-# SeGe Jung
+## Add names here:
+SeGe Jung
