@@ -3,15 +3,15 @@ name: default
 
 concurrency:
   limit: 1
-  
+
 steps:
 # Create Docker image and push to HDAP Docker registry
 - name: deploy_application_image
   image: plugins/docker
   settings:
     repo: gt-build.hdap.gatech.edu/data-scrapper
-    context: app
-    dockerfile: app/Dockerfile
+    context: .
+    dockerfile: ./Dockerfile
     tags:
       - latest
 
