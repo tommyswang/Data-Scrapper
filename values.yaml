@@ -2,13 +2,13 @@ global:
   namespace: ns-data-scrapper
 
 frontend:
-  name: ns-data-scrapper
+  name: frontend
   port: 5000
   replicaCount: 1
   proxy:
     incomingPath: /data-scrapper-app/
     containerPath: ""
   image:
-    repository: gt-build.hdap.gatech.edu/data-scrapper # TODO: update to gatech registry
+    repository: gt-build.hdap.gatech.edu/data-scrapper
     tag: latest
     pullPolicy: Always
