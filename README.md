@@ -1,7 +1,7 @@
 # Data-Scrapper
 
 ## Add names here:
-SeGe Jung
+SeGe Jung, 
 
 
 ## Deployment
