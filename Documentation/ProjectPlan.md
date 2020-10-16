@@ -9,8 +9,8 @@ Many public health entities utiize various formats such as PDFs, Websites, Excel
 
 ## 2 Process Description
 
-2.1 *Research*
-2.1.1 
+*Research*
+ 
 - Activity name: *Define project scope*
 - Activity description: *What is the team trying to accomplish for this project. What is the final deliverable. What are we not doing?*
 - Entrance criteria: *Need input from GTRI, Tia, Ellie, and Nate*
