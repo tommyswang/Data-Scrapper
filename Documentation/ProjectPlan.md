@@ -5,16 +5,16 @@
 ## 1 Introduction
 
 Project assigned to HZ-TASK Force is Data Scrapper. 
-Many public health entities utiize various formats such as PDFs, Websites, Excel, etc for data handling. This causes a lot of inefficiencies and complexity. The goal of this project is to build a tool that will enable easier NLP processing and data hangling for researchers and develepors.
+Many public health entities utiize various formats such as PDFs, Websites, Excel, etc for data handling. This causes a lot of inefficiencies and complexity. The goal of this project is to build a tool that will enable easier data hangling for researchers and develepors. PDF, HTML, Form, and API data will output to CSV. 
 
 ## 2 Process Description
 
-*Process description as a set of activities; for each activity, provide the following:*
-
-- *Activity name (verb or verb phrase)*
-- *Activity description (concise paragraph)*
-- *Entrance criteria (inputs needed for the activity)*
-- *Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)*
+2.1 *Research*
+2.1.1 
+- Activity name: *Define project scope*
+- Activity description: *What is the team trying to accomplish for this project. What is the final deliverable. What are we not doing?*
+- Entrance criteria: *Need input from GTRI, Tia, Ellie, and Nate*
+- Exit criteria: *clear list of objectives and deliverables laid out.*
 
 ## 3 Team
 
