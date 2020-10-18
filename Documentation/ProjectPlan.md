@@ -15,7 +15,7 @@ Many public health entities utiize various formats such as PDFs, Websites, Excel
 - Activity description: *What is the team trying to accomplish for this project. What is the final deliverable. What are we not doing?*
 - Entrance criteria: *Need input from GTRI, Tia, Ellie, and Nate*
 - Exit criteria: *clear list of objectives and deliverables laid out.*
-
+------------------
 - Activity name: *Meet with Stakeholders*
 - Activity description: *Gather requirements and information such as deliverables from the stakeholders. Introduce the team to the stakeholders.*
 - Entrance criteria: *Meeting time scheduled via BlueJeans*
