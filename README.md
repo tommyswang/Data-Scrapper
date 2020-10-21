@@ -21,13 +21,22 @@ python3 app/main.py
 Start the web application with Docker:
 
 ```shell
-# Start docker container
-docker run -d --name data-scrapper -p 5000:5000 allenlsy/ds-data-scrapper
+# Clone repository
+git clone https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper
+
+# Move to Data-Scrapper directory
+cd Data-Scrapper
+
+# Build docker image
+docker build --tag datascrapper:1.0 .
+
+# Run image as container
+docker run --publish 5000:5000 --detach --name ds  datascrapper:1.0
 
 # Visit homepage
 curl localhost:5000
 
 # Stop and remove Docker container
-docker stop data-scrapper
-docker rm data-scrapper
+docker stop ds
+docker rm ds
 ```
