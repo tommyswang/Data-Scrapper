@@ -1,8 +1,13 @@
 # Data-Scrapper
 
-## Add names here:
-SeGe Jung, 
+## Add names here (Alphabetically):
 
+* Allen Leigh
+* Hongyu Cheng
+* Kanishkah Anwari
+* SeGe Jung
+* Tommy Wang
+* Zahiduzzaman Biswas
 
 ## Deployment
 
