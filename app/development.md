@@ -21,7 +21,7 @@ Below is a file structure of this project:
 │   └── index.html
 ```
 
-Here is a explanation
+Here is an explanation
 
 * For our parsers, create separate Python files in the `lib/parsers` folder. The Python file should contain a Class. Please refer to `demo_parser.py` as an example.
 * For importing customized Python classes in the main app, check how the usage of `DemoParser` in `main.py` file.
