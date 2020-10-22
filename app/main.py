@@ -16,3 +16,9 @@ def hello_world():
 
 if __name__ == "__main__":
     app.run(host ='0.0.0.0', port = 5000, debug = True)
+
+with open('employee_file.csv', mode='w') as employee_file:
+    employee_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+    employee_writer.writerow(['John Smith', 'Accounting', 'November'])
+    employee_writer.writerow(['Erica Meyers', 'IT', 'March'])
