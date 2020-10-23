@@ -24,7 +24,7 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 @app.route('/hello')
 def hello_world():
     team_name = DemoParser.our_team_name()
-    return render_template('index.html', team_name=team_name)
+    return render_template('hello.html', team_name=team_name)
 
 
 if __name__ == "__main__":
