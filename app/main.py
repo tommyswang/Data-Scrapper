@@ -25,17 +25,17 @@ def form():
 
 
 @app.route('/api')
-def form():
+def api():
     return render_template("api.html")
 
 
 @app.route('/html')
-def form():
+def html():
     return render_template("html.html")
 
 
 @app.route('/pdf')
-def form():
+def pdf():
     return render_template("pdf.html")
 
 
