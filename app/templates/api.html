@@ -1,14 +1,19 @@
 {% extends "base.html" %}
 
 {% block body %}
-  <form id = "form_search" action="/results" method="post">
+<form id="form_search" action="/results" method="post">
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
-        <h1>API</h1>
-        <label>URL</label>
-        <input type="text">
+      <h1>API</h1>
+      <label>URL</label>
+      <input type="text">
       <input type="submit" value="Submit" class="apiUrl">
     </div>
   </div>
-  </form>
+</form>
+
+<a href="/">
+  <button class="bn-primary" id="goBack">Go Back</button>
+</a>
+
 {% endblock %}
