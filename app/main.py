@@ -19,6 +19,45 @@ def index():
 CORS(app, resources={r'/*': {'origins': '*'}})
 
 
+@app.route('/api', methods=['GET'])
+def api():
+    return render_template("api.html")
+
+
+@app.route('/api', methods=['POST'])
+def create_api_job():
+    pass
+
+
+@app.route('/form', methods=['GET'])
+def form():
+    return render_template("form.html")
+
+
+@app.route('/form', methods=['POST'])
+def create_form_job():
+    pass
+
+
+@app.route('/html', methods=['GET'])
+def html():
+    return render_template("html.html")
+
+
+@app.route('/html', methods=['POST'])
+def create_html_job():
+    pass
+
+
+@app.route('/pdf', methods=['GET'])
+def pdf():
+    return render_template("pdf.html")
+
+
+@app.route('/pdf', methods=['POST'])
+def create_pdf_job():
+    pass
+
 # sanity check route
 
 @app.route('/hello')
