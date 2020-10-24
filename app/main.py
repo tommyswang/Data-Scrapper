@@ -7,7 +7,7 @@ from flask import Flask, jsonify, render_template
 from flask_cors import CORS
 from lib.parsers.demo_parser import DemoParser
 
-app = Flask(__name__, template_folder = 'templates', static_folder = 'static', static_url_path = '')
+app = Flask(__name__, template_folder='templates', static_folder='static', static_url_path='')
 app.config.from_object(__name__)
 
 
@@ -17,6 +17,26 @@ def index():
 
 
 CORS(app, resources={r'/*': {'origins': '*'}})
+
+
+@app.route('/form')
+def form():
+    return render_template("form.html")
+
+
+@app.route('/api')
+def form():
+    return render_template("api.html")
+
+
+@app.route('/html')
+def form():
+    return render_template("html.html")
+
+
+@app.route('/pdf')
+def form():
+    return render_template("pdf.html")
 
 
 # sanity check route
