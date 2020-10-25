@@ -3,6 +3,8 @@
 
 from flask import Flask, jsonify, render_template
 
+
+
 # format here is:
 # from <relative module file name> import <class name>
 from flask_cors import CORS
@@ -11,7 +13,6 @@ from lib.parsers.demo_parser import DemoParser
 app = Flask(__name__, template_folder='templates',
             static_folder='static', static_url_path='')
 app.config.from_object(__name__)
-
 
 @app.route('/')
 def index():
