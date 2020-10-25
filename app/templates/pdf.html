@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 
 {% block body %}
-  <form id = "form_search" action="/results" method="post">
+  <form id = "form_search" action="/action_page.php" method="post">
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
         <h1>PDF</h1>
-          <input type="submit" value="Choose File">
-        <input type="submit" value="Submit" class="pdfFile">
+        <input type="file" name="pdfFile">
+        <input type="submit">
     </div>
   </div>
       <a href="/">Go Back</button></a>
