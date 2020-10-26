@@ -12,4 +12,4 @@ class ScrapeFile(db.Model):
     self.name = hashlib.md5(str(self.id).encode('utf-8')).hexdigest()
 
   def getUrl(self) -> str:
-    return hashlib.md5(str(self.id).encode('utf-8')).hexdigest()
+    return '/'+ self.name
