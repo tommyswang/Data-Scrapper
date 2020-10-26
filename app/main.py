@@ -13,10 +13,11 @@ app.config.from_object(__name__)
 
 ''' 
     SQLAlchemy Setup 
-    populate os variable or config file, hard code for now
-    DB: MySQL
+    TODO: use OS variables or config file - hard code for now
+    This is our MySQL DB hosted on cloud, for now lets keep it like this 
+    so project will build and we can keep working
 '''
-DATABSE_URI='mysql+mysqlconnector://{user}:{password}@{server}/{database}'.format(user='root', password='abc123456', server='192.168.31.46', database='data_scrper')
+DATABSE_URI='mysql+mysqlconnector://{user}:{password}@{server}/{database}'.format(user='root', password='abc123456', server='155.138.217.198', database='data_scrper')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = DATABSE_URI
 db = SQLAlchemy(app)

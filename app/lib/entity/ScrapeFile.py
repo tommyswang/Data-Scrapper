@@ -6,9 +6,8 @@ class ScrapeFile(db.Model):
 
   id = db.Column(db.String(64), primary_key=True)
   name = db.Column(db.String(64), unique=True)
-  fileType = db.Column(db.String(10), unique=False)
 
-  def __init__(self, fileType):
+  def __init__(self):
     self.id = str(uuid.uuid1())
     self.name = hashlib.md5(str(self.id).encode('utf-8')).hexdigest()
 
