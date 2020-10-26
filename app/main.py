@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from flask import Flask, jsonify, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 # format here is:
 # from <relative module file name> import <class name>
@@ -10,6 +11,18 @@ from lib.parsers.demo_parser import DemoParser
 app = Flask(__name__, template_folder = 'templates', static_folder = 'static', static_url_path = '')
 app.config.from_object(__name__)
 
+''' 
+    SQLAlchemy Setup 
+    populate os variable or config file, hard code for now
+    DB: MySQL
+'''
+DATABSE_URI='mysql+mysqlconnector://{user}:{password}@{server}/{database}'.format(user='root', password='abc123456', server='192.168.31.46', database='data_scrper')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_DATABASE_URI'] = DATABSE_URI
+db = SQLAlchemy(app)
+
+from lib.entity.ScrapeFile import ScrapeFile
+from lib.entity.ScrapeJob import ScrapeJob
 
 @app.route('/')
 def index():
@@ -67,4 +80,6 @@ def hello_world():
 
 
 if __name__ == "__main__":
+    db.create_all()
+    db.session.commit()
     app.run(host='0.0.0.0', port=5000, debug=True)
