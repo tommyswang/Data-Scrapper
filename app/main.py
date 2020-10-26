@@ -1,14 +1,18 @@
+
 #!/usr/bin/env python3
 
 from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
+
+
 
 # format here is:
 # from <relative module file name> import <class name>
 from flask_cors import CORS
 from lib.parsers.demo_parser import DemoParser
 
-app = Flask(__name__, template_folder = 'templates', static_folder = 'static', static_url_path = '')
+app = Flask(__name__, template_folder='templates',
+            static_folder='static', static_url_path='')
 app.config.from_object(__name__)
 
 ''' 
@@ -72,7 +76,13 @@ def pdf():
 def create_pdf_job():
     pass
 
+
+@app.route('/job/<hash>')
+def get_job(hash):
+    return "Building. You are trying to access job " + str(hash)
+
 # sanity check route
+
 
 @app.route('/hello')
 def hello_world():

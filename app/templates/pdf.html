@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <form id="form_search" action="/pdf" method="post" enctype="multipart/form-data">>
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+        <h1>PDF</h1>
+        <input type="file" name="file">
+        <input type="submit" value="Submit">
+    </div>
+  </div>
+      <a href="/">Go Back</button></a>
+  </form>
+{% endblock %}
