@@ -12,6 +12,8 @@ COPY . /deploy
 
 RUN pip install -r requirements.txt
 
+RUN ["pytest", "-v"]
+
 EXPOSE 5000
 
 ENTRYPOINT [ "python" ]
