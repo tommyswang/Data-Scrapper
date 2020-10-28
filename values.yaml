@@ -15,7 +15,7 @@ frontend:
 
 database:
   name: ds_db
-  port: 5432
+  port: 3306
   replicaCount: 1
   image:
     repository: mariadb
