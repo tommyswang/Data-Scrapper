@@ -19,6 +19,8 @@ Below is a file structure of this project:
 │   └── js
 ├── templates
 │   └── index.html
+├── tests
+│   └── test_paths.py
 ```
 
 Here is an explanation
