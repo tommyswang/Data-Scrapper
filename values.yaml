@@ -12,3 +12,16 @@ frontend:
     repository: gt-build.hdap.gatech.edu/data-scrapper
     tag: latest
     pullPolicy: Always
+
+database:
+  name: ds_db
+  port: 3306
+  replicaCount: 1
+  image:
+    repository: mariadb
+    tag: latest
+    pullPolicy: Always
+  volumes:
+    vol1: /var/lib/mysql/data
+  env:
+    MYSQL_ROOT_PASSWORD: abc123456
