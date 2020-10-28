@@ -1,6 +1,8 @@
 import pytest
 import requests
 
+from main import create_app
+
 def get_page(path):
     page = requests.get(path)
     return page
