@@ -14,7 +14,7 @@ frontend:
     pullPolicy: Always
 
 database:
-  name: ds_db
+  name: data-scrapper-db
   port: 3306
   replicaCount: 1
   image:
