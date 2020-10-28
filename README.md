@@ -20,6 +20,8 @@ Code below was tested on MacOS.
 Start the web application without Docker:
 
 ```shell
+pip install -r app/requirements.txt
+
 python3 app/main.py
 ```
 
