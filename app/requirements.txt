@@ -6,3 +6,4 @@ mysql-connector-python==8.0.22
 pytest==6.1.1
 requests==2.24.0
 # selenium==3.141.0
+tabula-py==2.2.0
