@@ -5,10 +5,10 @@ from flask import Flask, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 from flask_cors import CORS
-from lib.controller.api import controller as api_controller
-from lib.controller.pdf import controller as pdf_controller
-from lib.controller.html import controller as html_controller
-from lib.controller.form import controller as form_controller
+from controllers.api import controller as api_controller
+from controllers.pdf import controller as pdf_controller
+from controllers.html import controller as html_controller
+from controllers.form import controller as form_controller
 
 
 def create_app():
