@@ -15,10 +15,10 @@ app = Flask(__name__, template_folder='templates',
             static_folder='static', static_url_path='')
 app.config.from_object(__name__)
 
-''' 
-    SQLAlchemy Setup 
+'''
+    SQLAlchemy Setup
     TODO: use OS variables or config file - hard code for now
-    This is our MySQL DB hosted on cloud, for now lets keep it like this 
+    This is our MySQL DB hosted on cloud, for now lets keep it like this
     so project will build and we can keep working
 '''
 DATABSE_URI='mysql+mysqlconnector://{user}:{password}@{server}/{database}'.format(user='root', password='abc123456', server='155.138.217.198', database='data_scrper')
@@ -93,4 +93,4 @@ def hello_world():
 if __name__ == "__main__":
     db.create_all()
     db.session.commit()
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)
