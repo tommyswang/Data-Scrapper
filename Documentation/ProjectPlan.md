@@ -56,8 +56,8 @@ The project process is composed of 8 team sprints. The following is each process
 | Name | Role | Responsiblity |
 | ------ | ------ | ------ | 
 | SeGe Jung | Project Manager | responsible for understanding the project requirements and aligning the team to work efficienty towards project deliverables. Also responsible for creating project plan, roadmap, and resource allocation. |
-| Allen Leigh | Developer | Leading the sprint as master |
-| Zahiduzzaman Biswas | Developer | Coming up with architectural diagram and a main developer |
-| Tommy Wang | QA | Responsible for deployment pipeline |
-| Hongyu Cheng | Developer | Responsible for PDF input type |
-| Kanishkah Anwari | Developer/Project Manager | Responsible for front end |
+| Allen Leigh | Developer | Leading the sprint as master, responsible for deployment and tool framework setup |
+| Zahiduzzaman Biswas | Developer | Coming up with architectural diagram and form/html parser |
+| Tommy Wang | QA | Responsible for testing |
+| Hongyu Cheng | Developer | Responsible for PDF parser and setting up database |
+| Kanishkah Anwari | Developer/Project Manager | Responsible for front end, API parser |
