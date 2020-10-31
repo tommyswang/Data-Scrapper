@@ -104,6 +104,10 @@ body {
     text-decoration:none;
     }
 
+    input {
+        color: black;
+    }
+
     .card:hover{
          background: #fdad5c !important;
     }
