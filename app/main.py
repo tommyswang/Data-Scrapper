@@ -9,7 +9,6 @@ from controllers.api import controller as api_controller
 from controllers.pdf import controller as pdf_controller
 from controllers.html import controller as html_controller
 from controllers.form import controller as form_controller
-import lib.parsers.pdf_parser
 
 def create_app(testing=False):
     app = Flask(__name__, template_folder='templates',
@@ -67,10 +66,5 @@ if __name__ == "__main__":
     app = create_app()
     app.run(host='0.0.0.0', port=5000, debug=True)
 
-
-    def saveCSVtoFile(csv):
-        filename =
-        with open(filename, 'w', newline='') as csvfile:
-            writer = csv.writer(csvfile)
 
 
