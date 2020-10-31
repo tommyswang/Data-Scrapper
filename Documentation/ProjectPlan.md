@@ -41,12 +41,15 @@ The project process is composed of 8 team sprints. The following is each process
 - Entrance criteria: *Refer to the TS#5 feedback.*
 - Exit criteria: *Baseline is deployed through the pipeline to HDAP. Tool should be able to take input data, parse, and output csv file by URL*
 ------------------
-- Activity name: *Baseline Implementation & Coding (TS#7)*
-- Activity description: *This activity is the second part of the implementation and coding. Now that there is front end, parser libraries will be added for HTML, FORM, API, and PDF. The goal for this activity is to deploy baseline coding to HDAP. The tool will be able to parse four input type and output URL to download csv file.*
-- Entrance criteria: *Refer to the TS#5 feedback.*
-- Exit criteria: *Baseline is deployed through the pipeline to HDAP. Tool should be able to take input data, parse, and output csv file by URL*
-
-
+- Activity name: *Optimization Implementation & Coding (TS#7)*
+- Activity description: *This activity will be an optimization phase from the baseline. The parsing performance will be optimized and will result more accurate results. The front end will also be improved. At the end of this sprint, the app will be deployed to HDAP and pass all pytest.*
+- Entrance criteria: *Refer to the TS#6 feedback.*
+- Exit criteria: *Optimization is deployed through the pipeline to HDAP. Tool should be able to take input data, parse, and output csv file by URL*
+------------------
+- Activity name: *Final Implementation & Coding (TS#8)*
+- Activity description: *This activity is the final phase. It will reflect feedback from stakeholders and focus heavily on documentation and user manual.*
+- Entrance criteria: *Refer to the TS#7 feedback.*
+- Exit criteria: *Documentation and revisions based on stakeholder feedback.*
 
 ## 3 Team
 
