@@ -32,7 +32,7 @@ The project process is composed of 8 team sprints. The following is each process
 - Exit criteria: *App is deployed through the pipeline to HDAP.*
 ------------------
 - Activity name: *Front End Implementation & Coding (TS#5)*
-- Activity description: *For this activity, the goal is to set up the boiler plate for Flask app and deploy the front end to HDAP. Kanban is used to create task list and track progress, which will allow easy delegation of work. Controllers are added, unit test framework is added using pytest, and database container is set up in HDAP. The team will continue with the research on parsers and how to optimize them in the team's tool.*
+- Activity description: *For this activity, the goal is to set up the boiler plate for Flask app, set up pytest unit tests, and deploy the front end to HDAP. Kanban is used to create task list and track progress, which will allow easy delegation of work. Controllers are added and database container is set up in HDAP. The team will continue with the research on parsers and how to optimize them in the team's tool.*
 - Entrance criteria: *Refer to the TS#4 feedback.*
 - Exit criteria: *Front end is deployed through the pipeline to HDAP.*
 ------------------
