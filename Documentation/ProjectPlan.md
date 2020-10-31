@@ -9,32 +9,20 @@ Many public health entities utiize various formats such as PDFs, Websites, Excel
 
 ## 2 Process Description
 
-*Research*
- 
-- Activity name: *Define project scope*
-- Activity description: *What is the team trying to accomplish for this project. What is the final deliverable. What are we not doing?*
-- Entrance criteria: *Need input from GTRI, Tia, Ellie, and Nate*
-- Exit criteria: *clear list of objectives and deliverables laid out.*
+The project process is composed of 8 team sprints. The following is each process description. 
 ------------------
-- Activity name: *Meet with Stakeholders*
-- Activity description: *Gather requirements and information such as deliverables from the stakeholders. Introduce the team to the stakeholders.*
-- Entrance criteria: *Meeting time scheduled via BlueJeans*
-- Exit criteria: *Everyone attend meeting*
+- Activity name: *Project Kick-off (TS#1)*
+- Activity description: *Project is kicked-off in this activity. Team is formed and top 10 project list is chosen by the team. The class TAs assign teams a project they will be working on. Once the team and project is decided, project mentor and stakeholders are introduced. Project is introduced briefly by the mentor and a broad idea of what the team will be working on.*
+- Entrance criteria: *For this activity, team needs to be formed and project assigned. Also need a project mentor assigned to the team as well.*
+- Exit criteria: *To accomplish this activity done, team is formed and project is assigned.*
 ------------------
-- Activity name: *Conduct User Research*
-- Activity description: *Research about the current market of data scraper. Study its functionality and limits. Conduct use case model and see where our tool will fit in.*
-- Entrance criteria: *Need to know the client the team is working for and what they are looking to get.*
-- Exit criteria: *Research and grasp good understanding of how our tool will perform for our client.*
+- Activity name: *Requirement/Research (TS#2)*
+- Activity description: *This activity is the requirement and research phase. The goal is to research about the assigned project. Research use cases, markets, competition, and so on. Study the tool's functionality and limits. The second part is to create more definition to the project scope and requirements. What is the team trying to accomplish for this project? What is the final deliverable? What are we not doing?*
+- Entrance criteria: *Need input from GTRI, Tia, Ellie, and Nate on the requirements.*
+- Exit criteria: *Clear list of objectives and deliverables laid out. Requirements are finalized and aligned with the stakeholders*
 ------------------
-- Activity name: *Gather Requirements*
-- Activity description: *Understand what is required and what is not is critical for project definition*
-- Entrance criteria: *Input from the stakeholders*
-- Exit criteria: *Requirements are finalized and aligned with the stakeholders.*
-------------------
-*Design*
-
-- Activity name: *High level design/flow charts*
-- Activity description: *Draft a high level architecture diagram of the tool. This will include what tools and languages the team will use.*
+- Activity name: *Design (TS#3)*
+- Activity description: *This activity is Draft a high level architecture diagram of the tool. This will include what tools and languages the team will use.*
 - Entrance criteria: *Requirements and the functionality of the tool should be known.*
 - Exit criteria: *Functionalities, tools, and language chosen.*
 ------------------
