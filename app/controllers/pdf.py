@@ -11,3 +11,4 @@ def pdf():
 @controller.route('/pdf', methods=['POST'])
 def create_pdf_job():
     pass
+
