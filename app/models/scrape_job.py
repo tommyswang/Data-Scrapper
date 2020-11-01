@@ -1,5 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
-from __main__ import db
+from db import db
+
 
 class ScrapeJob(db.Model):
   id = db.Column(db.Integer, primary_key=True)
