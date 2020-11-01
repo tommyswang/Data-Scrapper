@@ -8,6 +8,7 @@ from controllers.api import controller as api_controller
 from controllers.pdf import controller as pdf_controller
 from controllers.html import controller as html_controller
 from controllers.form import controller as form_controller
+from controllers.home import controller as home_controller
 
 from db import db
 
@@ -17,27 +18,15 @@ def create_app(testing=False):
                 static_folder='static', static_url_path='')
     app.config.from_object(__name__)
 
-    @app.route('/')
-    def index():
-        return render_template("index.html")
-
     CORS(app, resources={r'/*': {'origins': '*'}})
 
+    # register controllers
+    app.register_blueprint(home_controller)
     app.register_blueprint(api_controller)
     app.register_blueprint(pdf_controller)
     app.register_blueprint(html_controller)
     app.register_blueprint(form_controller)
 
-    @app.route('/job/<hash>')
-    def get_job(hash):
-        return "Building. You are trying to access job " + str(hash)
-
-    # sanity check route
-
-    @app.route('/hello')
-    def hello_world():
-        team_name = DemoParser.our_team_name()
-        return render_template('hello.html', team_name=team_name)
 
     return app
 
