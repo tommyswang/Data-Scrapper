@@ -1,7 +1,5 @@
 # Data-Scrapper
 
-[![Build Status](https://drone.hdap.gatech.edu/api/badges/gt-cs6440-hit-fall2020/Data-Scrapper/status.svg?ref=refs/heads/deploy)](https://drone.hdap.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper)
-
 (Connect to GaTech VPN before connecting to the sites below)
 
 * Live site: https://apps.hdap.gatech.edu/data-scrapper-app/
@@ -26,6 +24,7 @@
 
 * Python3
 * Docker
+* MySQL server
 
 #### Without docker
 
@@ -35,7 +34,16 @@ pip install -r app/requirements.txt
 python3 app/main.py
 ```
 
-#### With docker
+To switch environment, use "ENV=<env name> python3 app/main.py". Available environments are:
+
+* `dev_local` (default)
+* `dev_remote`
+* `production`
+
+
+#### With docker (deprecated)
+
+(As we are using a separate container for MySQL, this method for development is not support)
 
 ```shell
 # Clone repository
