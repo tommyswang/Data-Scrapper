@@ -11,7 +11,7 @@ class ScrapeFile(db.Model):
 
   id = db.Column(db.String(64), primary_key=True)
   name = db.Column(db.String(64), unique=True)
-  path = db.Column(db.String)
+  path = db.Column(db.Text)
 
   def __init__(self, file):
     self.id = str(uuid.uuid1())
