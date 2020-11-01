@@ -42,6 +42,7 @@ mysql -u root -e "create database data_scrapper"
 ```shell
 # update packages
 pip3 install -r app/requirements.txt
+mkdir -p app/files
 
 # run server
 python3 app/main.py
