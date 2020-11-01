@@ -1,5 +1,7 @@
 # Data-Scrapper
 
+[![Build Status](https://drone.hdap.gatech.edu/api/badges/gt-cs6440-hit-fall2020/Data-Scrapper/status.svg?ref=refs/heads/deploy)](https://drone.hdap.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper)
+
 (Connect to GaTech VPN before connecting to the sites below)
 
 * Live site: https://apps.hdap.gatech.edu/data-scrapper-app/
@@ -16,17 +18,16 @@
 * Tommy Wang
 * Zahiduzzaman Biswas
 
-
-
 ## Deployment
 
 ### Testing locally
 
-To test locally, please have Python3 and Docker installed.
+**Pre-requisites**
 
-Code below was tested on MacOS.
+* Python3
+* Docker
 
-Start the web application without Docker:
+#### Without docker
 
 ```shell
 pip install -r app/requirements.txt
@@ -34,7 +35,7 @@ pip install -r app/requirements.txt
 python3 app/main.py
 ```
 
-Start the web application with Docker:
+#### With docker
 
 ```shell
 # Clone repository
@@ -56,3 +57,7 @@ curl localhost:5000
 docker stop ds
 docker rm ds
 ```
+
+### Deploy to HDAP
+
+Any update to the `deploy` branch will automatically trigger a deployment to HDAP.
