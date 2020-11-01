@@ -11,12 +11,30 @@ from controllers.form import controller as form_controller
 from controllers.home import controller as home_controller
 
 from db import db
+import os
+from os import path
+import pathlib
 
+import logging
+
+env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
 
 def create_app(testing=False):
     app = Flask(__name__, template_folder='templates',
                 static_folder='static', static_url_path='')
     app.config.from_object(__name__)
+    app.logger.setLevel(logging.INFO)
+
+    # config environment
+    current_abs_path = pathlib.Path(__file__).resolve().parents[0]
+    config_file_path = f"{current_abs_path}/configs/{env_name}.py"
+    if not path.exists(config_file_path):
+        app.logger.error(
+            f"Config file for ENV {env_name} at path {config_file_path} does not exist. Exit.")
+        exit(1)
+    else:
+        app.logger.info(f"Loads config from {config_file_path}")
+    app.config.from_pyfile(config_file_path)
 
     CORS(app, resources={r'/*': {'origins': '*'}})
 
@@ -33,24 +51,14 @@ def create_app(testing=False):
 
 if __name__ == "__main__":
     app = create_app()
-    '''
-        SQLAlchemy Setup
-        TODO: use OS variables or config file - hard code for now
-        This is our MySQL DB hosted on cloud, for now lets keep it like this
-        so project will build and we can keep working
-    '''
-
-    DATABASE_URI = 'mysql+mysqlconnector://{user}:{password}@{server}/{database}'.format(
-        user='root', password='abc123456', server='155.138.217.198', database='data_scrper')
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = DATABASE_URI
+    app.logger.info(f"Environment: {env_name}")
     app.app_context().push()
 
     from models.scrape_file import ScrapeFile
     from models.scrape_job import ScrapeJob
-
     db.init_app(app)
 
+    # migrate database
     db.create_all()
     db.session.commit()
 
