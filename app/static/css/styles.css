@@ -184,3 +184,7 @@ row {
 .help>p>a {
     color: white !important;
 }
+
+.hidden {
+    display: none;
+}
