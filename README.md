@@ -18,7 +18,7 @@
 
 ## Deployment
 
-### Testing locally
+### Local development
 
 **Pre-requisites**
 
@@ -26,22 +26,35 @@
 * Docker
 * MySQL server
 
-#### Without docker
+
+**NOTE: after pull from master branch, always install packages from `app/requirements.txt`**
+
+### First time running setup
+
+Create the database on local:
+
+```
+mysql -u root -e "create database data_scrapper"
+```
+
+#### Run server without docker
 
 ```shell
-pip install -r app/requirements.txt
+# update packages
+pip3 install -r app/requirements.txt
 
+# run server
 python3 app/main.py
 ```
 
-To switch environment, use "ENV=<env name> python3 app/main.py". Available environments are:
+To switch environment, use `ENV=<env name> python3 app/main.py`. Available environments are:
 
 * `dev_local` (default)
 * `dev_remote`
 * `production`
 
 
-#### With docker (deprecated)
+#### Run server With docker (TODO)
 
 (As we are using a separate container for MySQL, this method for development is not support)
 
