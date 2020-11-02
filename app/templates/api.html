@@ -2,6 +2,7 @@
 
 {% block body %}
 <script src="{{url_for('static', filename='js/api.js')}}"></script>
+<!--TODO Make Error a fragment to include in all forms-->
     {% if error %}
     <span>Invalid Fhir Resource</span>
     {% endif %}
@@ -17,12 +18,11 @@
       <input type="submit" value="Submit" class="apiUrl">
     </div>
   </div>
-      <div id="data-link">
-          <a href="/">Go Back</button></a>
-      </div>
-
+      <a href="/">Go Back</button></a>
+      <div id="data-link"></div>
   </form>
 <script>
+<!--TODO extract and use the Scrape Job-->
     if (document.getElementById('safe_path') != null) {
         var url = window.location.origin + '/api/download';
         console.log(url);
@@ -46,11 +46,11 @@
                     link.href = url
                     link.download = "data_file.csv"
                     link.text = "Download"
-                    link.click()
                     document.getElementById('data-link').append(link);
                     setTimeout(() => {
                         window.URL.revokeObjectURL(url);
                         link.remove();
+
                     }, 30000);
                 }
 
