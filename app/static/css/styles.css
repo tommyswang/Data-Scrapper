@@ -107,6 +107,10 @@ body {
     input {
         color: black;
     }
+    row {
+        display: flex;
+        justify-content: center;
+    }
 
     .card:hover{
          background: #fdad5c !important;

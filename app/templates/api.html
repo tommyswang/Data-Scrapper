@@ -13,9 +13,21 @@
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
         <h1>API</h1>
-        <label>URL</label>
-        <input type="text" name="url" style="color:black">
-      <input type="submit" value="Submit" class="apiUrl">
+        <div class="row">
+            <div class="col-md-12">
+                <label>URL</label>
+                <input type="text" name="url">
+                <input type="radio" name="flat">
+                <label>Flat</label>
+                <input type="radio" name="structured">
+                <label>Structured</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" value="Submit" class="apiUrl">
+            </div>
+        </div>
     </div>
   </div>
       <a href="/">Go Back</button></a>
