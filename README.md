@@ -16,17 +16,17 @@
 * Tommy Wang
 * Zahiduzzaman Biswas
 
-
-
 ## Deployment
 
 ### Testing locally
 
-To test locally, please have Python3 and Docker installed.
+**Pre-requisites**
 
-Code below was tested on MacOS.
+* Python3
+* Docker
+* MySQL server
 
-Start the web application without Docker:
+#### Without docker
 
 ```shell
 pip install -r app/requirements.txt
@@ -34,7 +34,16 @@ pip install -r app/requirements.txt
 python3 app/main.py
 ```
 
-Start the web application with Docker:
+To switch environment, use "ENV=<env name> python3 app/main.py". Available environments are:
+
+* `dev_local` (default)
+* `dev_remote`
+* `production`
+
+
+#### With docker (deprecated)
+
+(As we are using a separate container for MySQL, this method for development is not support)
 
 ```shell
 # Clone repository
@@ -56,3 +65,7 @@ curl localhost:5000
 docker stop ds
 docker rm ds
 ```
+
+### Deploy to HDAP
+
+Any update to the `deploy` branch will automatically trigger a deployment to HDAP.
