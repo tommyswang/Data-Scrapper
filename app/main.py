@@ -10,14 +10,15 @@ from controllers.html import controller as html_controller
 from controllers.form import controller as form_controller
 from controllers.home import controller as home_controller
 
-from db import db
+from db import DSDB
+
 import os
 from os import path
 import pathlib
 
 import logging
 
-env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
+env_name = os.environ.get('ENV', 'dev_remote')  # default ENV is dev_local
 
 def create_app(testing=False):
     app = Flask(__name__, template_folder='templates',
@@ -56,10 +57,8 @@ if __name__ == "__main__":
 
     from models.scrape_file import ScrapeFile
     from models.scrape_job import ScrapeJob
-    db.init_app(app)
 
-    # migrate database
-    db.create_all()
-    db.session.commit()
+    db = DSDB(app)
+    db.initDB()
 
     app.run(host='0.0.0.0', port=5000, debug=True)
