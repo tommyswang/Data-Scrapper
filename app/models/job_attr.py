@@ -1,14 +1,14 @@
 from enum import Enum
 
 
-class JobType(Enum):
+class JobType:
     API = 'API'
     HTML = 'HTML'
     FORM = 'FORM'
     PDF = 'PDF'
 
 
-class JobStatus(Enum):
+class JobStatus:
     PENDING = "pending"
     RUNNING = "running"
     FINISHED = "finished"
