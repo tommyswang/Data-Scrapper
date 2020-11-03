@@ -15,4 +15,4 @@ def test_parser():
     assert len(ret) == 2
 
     lines = ret[0].splitlines()
-    assert len(lines) == 5
+    assert len(lines) == 7
