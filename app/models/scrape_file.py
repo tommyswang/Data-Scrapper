@@ -45,7 +45,7 @@ class ScrapeFile(db.Model):
     data = file.read()
 
     with open(filepath, 'wb') as f:
-        f.write(data)
+        f.write(bytes(data))
 
     relative_filepath = os.path.join("/", FILE_DIR, new_file_name)
 
@@ -67,7 +67,7 @@ class ScrapeFile(db.Model):
     data = file.read()
 
     f = open(filepath, "wb")
-    f.write(data)
+    f.write(bytes(data))
     f.close()
 
     relative_filepath = os.path.join("/", FILE_DIR, filename)
