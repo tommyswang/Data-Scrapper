@@ -60,11 +60,11 @@ class ScrapeFile(db.Model):
     Returns:
       The relative path of the file stored in storage.
     """
-    root_path = pathlib.Path(__file__).parent.absolute()
+    root_path = pathlib.Path(__file__).resolve().parents[1]
     filename = os.path.basename(file.name)
     filepath = os.path.join(root_path, FILE_DIR, filename)
 
-    data = list(file.read())
+    data = file.read()
 
     f = open(filepath, "wb")
     f.write(data)
