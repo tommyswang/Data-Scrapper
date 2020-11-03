@@ -49,17 +49,16 @@ def create_app(testing=False):
     return app
 
 
-if __name__ == "__main__":
-    env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
+env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
 
-    app = create_app()
-    app.logger.info(f"Environment: {env_name}")
-    app.app_context().push()
+app = create_app()
+app.logger.info(f"Environment: {env_name}")
+app.app_context().push()
 
-    from models.scrape_file import ScrapeFile
-    from models.scrape_job import ScrapeJob
-    db.init_app(app)
+db.init_app(app)
 
+
+if __name__ == '__main__':
     # migrate database
     db.create_all()
     db.session.commit()
