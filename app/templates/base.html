@@ -33,6 +33,13 @@
                     <li><a href="/login">LOGIN</a></li>
                 </ul>
             </div>
+            {% if error is defined %}
+            <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+            {% if info is defined %}
+            <div class="alert alert-info">{{ info }}</div>
+            {% endif %}
+
         </div>
     </nav>
 
@@ -46,15 +53,5 @@
         <p>TEAM HZ-TASK | Health Informatics | Fall 2020</p>
     </footer>
 </body>
-
-<!-- Error -->
-    {% if error %}
-        <script>
-            let error;
-            if (typeof error != 'undefined'){
-            document.write("Error")
-        }
-        </script>
-    {% endif %}
 
 </html>
