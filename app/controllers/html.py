@@ -10,5 +10,4 @@ def html():
 
 @controller.route('/html', methods=['POST'])
 def create_html_job():
-    # error
     pass
