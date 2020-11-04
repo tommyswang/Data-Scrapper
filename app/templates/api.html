@@ -3,9 +3,6 @@
 {% block body %}
 <script src="{{url_for('static', filename='js/api.js')}}"></script>
 <!--TODO Make Error a fragment to include in all forms-->
-    {% block error %}
-    {% endblock %}
-
   <form id="form_search" onsubmit="return apiCall(this)" method="post">
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">

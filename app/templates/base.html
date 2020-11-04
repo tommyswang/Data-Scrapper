@@ -47,14 +47,11 @@
     </footer>
 </body>
 
-
 <!-- Error -->
     {% if error %}
-    <span>Invalid</span>
+        <script>
+        error = "Error";
+        </script>
     {% endif %}
-    {% if error == False %}
-     <input type="hidden" name="safe_path" id="safe_path" value= {{ safe_path }} >
-     {% endif %}
-
 
 </html>
