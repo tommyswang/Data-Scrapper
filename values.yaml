@@ -7,7 +7,7 @@ frontend:
   replicaCount: 1
   proxy:
     incomingPath: /data-scrapper-app/
-    containerPath: ""
+    containerPath: "/"
   image:
     repository: gt-build.hdap.gatech.edu/data-scrapper # TODO: update to gatech registry
     tag: latest
