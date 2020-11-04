@@ -47,7 +47,7 @@
     </footer>
 </body>
 
-{% block error %}
+
 <!-- Error -->
     {% if error %}
     <span>Invalid</span>
@@ -55,6 +55,6 @@
     {% if error == False %}
      <input type="hidden" name="safe_path" id="safe_path" value= {{ safe_path }} >
      {% endif %}
-{% endblock %}
+
 
 </html>
