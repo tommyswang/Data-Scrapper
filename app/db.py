@@ -6,19 +6,16 @@ db = SQLAlchemy()
 
 class DSDB:
     def __init__(self, app):
-        self.db = SQLAlchemy()
+        self.db = db
         self.app = app
-        self.dbStr = app.config['SQLALCHEMY_DATABASE_URI']
         self.db.init_app(app)
+        
 
     def initDB(self):
         try:
-            engine = create_engine(self.dbStr)  
+            engine = create_engine(self.app.config['SQLALCHEMY_DATABASE_URI'])  
 
-            if database_exists(engine.url):
-                self.app.logger.info(f"Skip Creating Database/Schema: {self.dbStr}")
-            else:
-                self.app.logger.info(f"Creating Database/Schema: {self.dbStr}")
+            if not database_exists(engine.url):
                 create_database(engine.url)
             
             # migrate database

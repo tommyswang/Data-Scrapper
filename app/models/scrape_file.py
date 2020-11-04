@@ -14,7 +14,7 @@ class ScrapeFile(db.Model):
   path = db.Column(db.Text)
 
   def __init__(self, file):
-    self.id = str(uuid.uuid1())
+    self.id = uuid.uuid1().hex.upper()[:8]
     self.name = hashlib.md5(str(self.id).encode('utf-8')).hexdigest()
 
     # Save file to local data storage. Save file path to database

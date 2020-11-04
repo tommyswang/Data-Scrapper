@@ -15,7 +15,6 @@ from db import DSDB
 import os
 from os import path
 import pathlib
-
 import logging
 
 env_name = os.environ.get('ENV', 'dev_remote')  # default ENV is dev_local
@@ -46,7 +45,6 @@ def create_app(testing=False):
     app.register_blueprint(html_controller)
     app.register_blueprint(form_controller)
 
-
     return app
 
 
@@ -58,7 +56,6 @@ if __name__ == "__main__":
     from models.scrape_file import ScrapeFile
     from models.scrape_job import ScrapeJob
 
-    db = DSDB(app)
-    db.initDB()
+    DSDB(app).initDB()
 
     app.run(host='0.0.0.0', port=5000, debug=True)
