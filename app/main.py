@@ -17,7 +17,7 @@ from os import path
 import pathlib
 import logging
 
-env_name = os.environ.get('ENV', 'dev_remote')  # default ENV is dev_local
+env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
 
 def create_app(testing=False):
     app = Flask(__name__, template_folder='templates',
