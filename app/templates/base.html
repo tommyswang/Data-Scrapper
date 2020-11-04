@@ -50,7 +50,10 @@
 <!-- Error -->
     {% if error %}
         <script>
-        error = "Error";
+            let error;
+            if (typeof error != 'undefined'){
+            document.write("Error")
+        }
         </script>
     {% endif %}
 
