@@ -19,6 +19,7 @@ import logging
 
 env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
 
+
 def create_app(testing=False):
     app = Flask(__name__, template_folder='templates',
                 static_folder='static', static_url_path='')
@@ -47,12 +48,12 @@ def create_app(testing=False):
 
     return app
 
+app = create_app()
+app.logger.info(f"Environment: {env_name}")
+app.app_context().push()
 
-if __name__ == "__main__":
-    app = create_app()
-    app.logger.info(f"Environment: {env_name}")
-    app.app_context().push()
 
+if __name__ == '__main__':
     from models.scrape_file import ScrapeFile
     from models.scrape_job import ScrapeJob
 
