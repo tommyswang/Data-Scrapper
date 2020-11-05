@@ -55,12 +55,10 @@ def load_config(app):
 app = create_app()
 app.logger.info(f"Environment: {env_name}")
 app.app_context().push()
+from models.scrape_file import ScrapeFile
+from models.scrape_job import ScrapeJob
 
+DSDB(app).initDB()
 
 if __name__ == '__main__':
-    from models.scrape_file import ScrapeFile
-    from models.scrape_job import ScrapeJob
-
-    DSDB(app).initDB()
-
     app.run(host='0.0.0.0', port=5000, debug=True)
