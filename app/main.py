@@ -10,11 +10,11 @@ from controllers.html import controller as html_controller
 from controllers.form import controller as form_controller
 from controllers.home import controller as home_controller
 
-from db import db
+from db import DSDB
+
 import os
 from os import path
 import pathlib
-
 import logging
 
 env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
@@ -26,16 +26,7 @@ def create_app(testing=False):
     app.config.from_object(__name__)
     app.logger.setLevel(logging.INFO)
 
-    # config environment
-    current_abs_path = pathlib.Path(__file__).resolve().parents[0]
-    config_file_path = f"{current_abs_path}/configs/{env_name}.py"
-    if not path.exists(config_file_path):
-        app.logger.error(
-            f"Config file for ENV {env_name} at path {config_file_path} does not exist. Exit.")
-        exit(1)
-    else:
-        app.logger.info(f"Loads config from {config_file_path}")
-    app.config.from_pyfile(config_file_path)
+    load_config(app)
 
     CORS(app, resources={r'/*': {'origins': '*'}})
 
@@ -49,18 +40,26 @@ def create_app(testing=False):
     return app
 
 
-env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
+def load_config(app):
+    current_abs_path = pathlib.Path(__file__).resolve().parents[0]
+    config_file_path = f"{current_abs_path}/configs/{env_name}.py"
+    if not path.exists(config_file_path):
+        app.logger.error(
+            f"Config file for ENV {env_name} at path {config_file_path} does not exist. Exit.")
+        exit(1)
+    else:
+        app.logger.info(f"Loads config from {config_file_path}")
+    app.config.from_pyfile(config_file_path)
 
 app = create_app()
 app.logger.info(f"Environment: {env_name}")
 app.app_context().push()
 
-db.init_app(app)
-
 
 if __name__ == '__main__':
-    # migrate database
-    db.create_all()
-    db.session.commit()
+    from models.scrape_file import ScrapeFile
+    from models.scrape_job import ScrapeJob
+
+    DSDB(app).initDB()
 
     app.run(host='0.0.0.0', port=5000, debug=True)
