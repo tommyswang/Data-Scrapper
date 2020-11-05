@@ -26,16 +26,7 @@ def create_app(testing=False):
     app.config.from_object(__name__)
     app.logger.setLevel(logging.INFO)
 
-    # config environment
-    current_abs_path = pathlib.Path(__file__).resolve().parents[0]
-    config_file_path = f"{current_abs_path}/configs/{env_name}.py"
-    if not path.exists(config_file_path):
-        app.logger.error(
-            f"Config file for ENV {env_name} at path {config_file_path} does not exist. Exit.")
-        exit(1)
-    else:
-        app.logger.info(f"Loads config from {config_file_path}")
-    app.config.from_pyfile(config_file_path)
+    load_config(app)
 
     CORS(app, resources={r'/*': {'origins': '*'}})
 
@@ -47,6 +38,18 @@ def create_app(testing=False):
     app.register_blueprint(form_controller)
 
     return app
+
+
+def load_config(app):
+    current_abs_path = pathlib.Path(__file__).resolve().parents[0]
+    config_file_path = f"{current_abs_path}/configs/{env_name}.py"
+    if not path.exists(config_file_path):
+        app.logger.error(
+            f"Config file for ENV {env_name} at path {config_file_path} does not exist. Exit.")
+        exit(1)
+    else:
+        app.logger.info(f"Loads config from {config_file_path}")
+    app.config.from_pyfile(config_file_path)
 
 app = create_app()
 app.logger.info(f"Environment: {env_name}")
