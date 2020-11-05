@@ -2,13 +2,26 @@ global:
   namespace: ns-data-scrapper
 
 frontend:
-  name: ns-data-scrapper
-  port: 5000
+  name: frontend
+  port: 80
   replicaCount: 1
   proxy:
     incomingPath: /data-scrapper-app/
     containerPath: "/"
   image:
-    repository: gt-build.hdap.gatech.edu/data-scrapper # TODO: update to gatech registry
+    repository: gt-build.hdap.gatech.edu/data-scrapper
     tag: latest
     pullPolicy: Always
+
+database:
+  name: data-scrapper-db
+  port: 3306
+  replicaCount: 1
+  image:
+    repository: mariadb
+    tag: latest
+    pullPolicy: Always
+  volumes:
+    vol1: /var/lib/mysql/data
+  env:
+    MYSQL_ROOT_PASSWORD: abc123456
