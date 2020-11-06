@@ -6,7 +6,7 @@ from models.job_attr import *
 import pathlib
 import os
 from main import create_app
-from __init__ import db
+from setup import db
 from os import path
 from models.job_attr import JobStatus, JobType
 

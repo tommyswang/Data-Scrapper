@@ -1,4 +1,4 @@
-from __init__ import create_app
+from setup import create_app
 
 app = create_app()
 app.app_context().push()

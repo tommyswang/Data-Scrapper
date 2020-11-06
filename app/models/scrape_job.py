@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from __init__ import db
+from setup import db
 from flask import current_app
 
 from models.job_attr import JobStatus, JobType

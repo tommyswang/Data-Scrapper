@@ -1,6 +1,6 @@
 import uuid
 import hashlib
-from __init__ import db
+from setup import db
 import pathlib
 import os
 
