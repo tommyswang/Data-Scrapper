@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
-from main import app
-from db import db
+from setup import db
+from flask import current_app
+
 from models.job_attr import JobStatus, JobType
 from models.scrape_file import ScrapeFile
 from lib.parsers.html_parser import HTMLParser
@@ -72,10 +73,10 @@ class ScrapeJob(db.Model):
         except Exception as e:
             traceback.print_exc()
             if hasattr(e, 'message'):
-                app.logger.error(
+                current_app.logger.error(
                     "Parsing error [%]: %" % (self.id, e.message))
             else:
-                app.logger.error(
+                current_app.logger.error(
                     "Parsing error [%]: %" % (self.id, e))
 
             self.status = JobStatus.FAILED
