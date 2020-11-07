@@ -24,7 +24,6 @@ env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
 def create_app(testing=False):
     app = Flask(__name__, template_folder='templates',
                 static_folder='static', static_url_path='')
-    app.register_blueprint(controller, url_prefix='/data-scapper-app')
     app.config.from_object(__name__)
     app.logger.setLevel(logging.INFO)
     app.logger.info(f"Environment: {env_name}")
