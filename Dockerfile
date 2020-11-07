@@ -2,7 +2,7 @@
 FROM python:3.8-slim as builder
 
 RUN apt-get update -y && \
-  apt-get install -y python-pip python-dev
+  apt-get install -y python3-pip python-dev
 
 RUN mkdir -p /deploy
 
@@ -10,9 +10,11 @@ WORKDIR /deploy/app
 
 COPY . /deploy
 
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 EXPOSE 5000
 
-ENTRYPOINT [ "python" ]
+ENV ENV=production
+
+ENTRYPOINT ["python3" ]
 CMD [ "main.py" ]
