@@ -3,6 +3,12 @@
 {% block body %}
 <script src="{{url_for('static', filename='js/api.js')}}"></script>
 <!--TODO Make Error a fragment to include in all forms-->
+    {% if error %}
+    <span>Invalid Fhir Resource</span>
+    {% endif %}
+    {% if error == False %}
+    <input type="hidden" name="safe_path" id="safe_path" value= {{ safe_path }} >
+    {% endif %}
   <form id="form_search" onsubmit="return apiCall(this)" method="post">
   <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
