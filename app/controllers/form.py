@@ -1,7 +1,6 @@
 from flask import Blueprint, render_template
 
 controller = Blueprint('form', __name__)
-app.config['APPLICATION_ROOT'] = '/data-scrapper-app'
 
 @controller.route('/form', methods=['GET'])
 def form():
