@@ -25,6 +25,7 @@ def create_app(testing=False):
     app = Flask(__name__, template_folder='templates',
                 static_folder='static', static_url_path='')
     app.config.from_object(__name__)
+    app.config["APPLICATION_ROOT"] = "/data-scrapper-app"
     app.logger.setLevel(logging.INFO)
     app.logger.info(f"Environment: {env_name}")
     load_config(app)
