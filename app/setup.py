@@ -5,6 +5,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
 db = SQLAlchemy()
+app = Flask(__name__, template_folder='templates', static_folder='static', static_url_path='')
+app.config['APPLICATION_ROOT'] = '/data-scrapper-app'
 
 from models.scrape_job import ScrapeJob
 from models.scrape_file import ScrapeFile
