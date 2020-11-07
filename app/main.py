@@ -10,6 +10,7 @@ from controllers.pdf import controller as pdf_controller
 from controllers.html import controller as html_controller
 from controllers.form import controller as form_controller
 from controllers.home import controller as home_controller
+from controllers.jobs import controller as jobs_controller
 
 from db import DSDB
 
@@ -19,6 +20,7 @@ import pathlib
 import logging
 
 env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
+
 
 
 def create_app(testing=False):
@@ -37,6 +39,7 @@ def create_app(testing=False):
     app.register_blueprint(pdf_controller)
     app.register_blueprint(html_controller)
     app.register_blueprint(form_controller)
+    app.register_blueprint(jobs_controller)
 
     return app
 
