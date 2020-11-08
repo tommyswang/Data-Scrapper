@@ -6,7 +6,6 @@ import os
 
 FILE_DIR = "files"
 
-
 class ScrapeFile(db.Model):
 
   id = db.Column(db.String(64), primary_key=True)
