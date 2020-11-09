@@ -47,7 +47,6 @@ class ScrapeJob(db.Model):
         db.session.commit()
 
         try:
-            print(self.jobType)
             parser = None
             if self.jobType == JobType.HTML:
                 parser = HTMLParser(self.jobInput)
@@ -108,8 +107,5 @@ class ScrapeJob(db.Model):
         input_file_obj = ScrapeFile.query.filter_by(
             id=self.jobInput).first()
 
-        print(input_file_obj)
-        print(self.jobInput)
         local_file_path = str(root_path) + input_file_obj.path
-
         return PdfParser(local_file_path)
