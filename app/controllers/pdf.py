@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect
-from setup import db
+from db import db
 from models.scrape_file import ScrapeFile
 from models.scrape_job import ScrapeJob
 from models.job_attr import JobType
