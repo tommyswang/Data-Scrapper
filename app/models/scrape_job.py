@@ -3,13 +3,15 @@ from setup import db
 from flask import current_app
 
 from models.job_attr import JobStatus, JobType
-from models.scrape_file import ScrapeFile
+from models.scrape_file import ScrapeFile, FILE_DIR
 from lib.parsers.html_parser import HTMLParser
 from lib.parsers.pdf_parser import PdfParser
 import pathlib
+import uuid
 import os
 from tempfile import NamedTemporaryFile
 import sys
+from zipfile import ZipFile
 import traceback
 
 
@@ -45,6 +47,7 @@ class ScrapeJob(db.Model):
         db.session.commit()
 
         try:
+            print(self.jobType)
             parser = None
             if self.jobType == JobType.HTML:
                 parser = HTMLParser(self.jobInput)
@@ -54,15 +57,30 @@ class ScrapeJob(db.Model):
             outputs = parser.parse()
 
             if len(outputs) > 0:
-                # TODO: save first output for now
-                csv_content = outputs[0]
-                temp_file = NamedTemporaryFile(delete=False)
-                temp_file.write(bytes(csv_content, 'utf-8'))
-                temp_file.close()
+                zip_name = uuid.uuid1().hex.upper()[:10] + '.zip'
+                root_path = pathlib.Path(__file__).resolve().parents[1]
+                filepath = os.path.join(root_path, FILE_DIR, zip_name)
 
-                temp_file = open(temp_file.name, "rb")
+                z = ZipFile(filepath, 'w')
+                # keep a list of temp files and call close to delete them after zip
+                temp_file_list = []
 
-                self.file = ScrapeFile(temp_file)
+                # create temp CSVs and zip up
+                for csv_content in outputs:
+                    temp_file = NamedTemporaryFile(delete=True)
+                    temp_file.write(bytes(csv_content, 'utf-8'))
+                    temp_file.flush()
+                    temp_file_list.append(temp_file)
+                    z.write(temp_file.name, os.path.basename(temp_file.name + '.csv'))
+
+                # close stream + delete temp CSVs (delete=True)
+                for t in temp_file_list:
+                    t.close()
+
+                z.close()
+
+                f = open(filepath, "rb")
+                self.file = ScrapeFile(f)
 
             self.status = JobStatus.FINISHED
 
@@ -90,5 +108,8 @@ class ScrapeJob(db.Model):
         input_file_obj = ScrapeFile.query.filter_by(
             id=self.jobInput).first()
 
+        print(input_file_obj)
+        print(self.jobInput)
         local_file_path = str(root_path) + input_file_obj.path
+
         return PdfParser(local_file_path)
