@@ -2,9 +2,7 @@
 
 <!-- Fill in content -->
 
-## How it is tested?
-
-
+## How was is tested?
 
 - [ ] Passed Pytest
 - [ ] Started local server
