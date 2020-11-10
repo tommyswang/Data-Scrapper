@@ -1,18 +1,22 @@
-#dockerfile
 FROM python:3.8-slim as builder
 
 RUN apt-get update -y && \
-  apt-get install -y python-pip python-dev
+  apt-get install -y python3-pip python-dev nginx
 
 RUN mkdir -p /deploy
 
 WORKDIR /deploy/app
 
 COPY . /deploy
+COPY ./nginx.conf /etc/nginx/sites-available/default
 
-RUN pip install -r requirements.txt
+# RUN service nginx start
+RUN pip3 install -r requirements.txt
+RUN pip3 install gunicorn
 
-EXPOSE 5000
+EXPOSE 80
 
-ENTRYPOINT [ "python" ]
-CMD [ "main.py" ]
+ENV ENV=production
+
+# ENTRYPOINT ["./prod-start.sh"]
+ENTRYPOINT ["python3", "main.py"]

@@ -6,7 +6,7 @@ frontend:
   port: 80
   replicaCount: 1
   proxy:
-    incomingPath: /data-scrapper-app/
+    incomingPath: "/data-scrapper-app/"
     containerPath: "/"
   image:
     repository: gt-build.hdap.gatech.edu/data-scrapper
