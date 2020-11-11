@@ -13,7 +13,6 @@ def create_api_job():
     json_format = request.form['json_format']
     url = request.form['url']
     job = ScrapeJob(JobType.API, url, json_format)
-    print(job)
     if job:
         job.run()
         return render_template("api.html", error="Running Job")
