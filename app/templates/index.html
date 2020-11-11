@@ -1,9 +1,12 @@
-{% extends "base.html" %} {% block body %}
-<h1>Select Data Source</h1>
-<div class="col-md-12">
-    <a href="{{ url_for('form.form') }}" class="btn-primary">Form</a>
-    <a href="{{ url_for('api.api') }}" class="btn-primary">API</a>
-    <a href="{{ url_for('html.html') }}" class="btn-primary">HTML</a>
-    <a href="{{ url_for('pdf.pdf') }}" class="btn-primary">PDF</a>
+{% extends "base.html" %} {% block banner %}
+<div class="bg-1 text-center">
+    <h1>Select Data Source</h1>
+    <div class="col-md-12">
+        <a href="{{ url_for('form.form') }}" class="btn-primary">Form</a>
+        <a href="{{ url_for('api.api') }}" class="btn-primary">API</a>
+        <a href="{{ url_for('html.html') }}" class="btn-primary">HTML</a>
+        <a href="{{ url_for('pdf.pdf') }}" class="btn-primary">PDF</a>
+    </div>
+
 </div>
 {% endblock %}
