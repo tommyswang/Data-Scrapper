@@ -1,18 +1,17 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block body %}
 
-{% block body %}
-
-  <div class="container h-100">
-    <div class="d-flex justify-content-center h-100">
-      <h2> Your job is {{ job.status }} </h2> 
-      {% if job.status == "running" %}
-        <div class="lds-dual-ring"></div>
-      {% elif job.status == "finished" %}
-        <a href=" {{ job.file.path }} " class="btn btn-success">Download CSV</a>
-      {% endif %}
+<div class="text-center">
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+            <h2> Your job is {{ job.status }} </h2>
+            {% if job.status == "running" %}
+            <div class="lds-dual-ring"></div>
+            {% elif job.status == "finished" %}
+            <a href=" {{ job.file.path }} " class="btn btn-success">Download CSV</a> {% endif %}
+        </div>
     </div>
-  </div>
 
-  <a href="/">Go Back</button></a>
+    <a href="/">Go Back</button></a>
+</div>
 
 {% endblock %}
