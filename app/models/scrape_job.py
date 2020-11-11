@@ -1,16 +1,13 @@
-from flask_sqlalchemy import SQLAlchemy
+
 from db import db
 from flask import current_app
-
 from models.job_attr import JobStatus, JobType
 from models.scrape_file import ScrapeFile
 from lib.parsers.html_parser import HTMLParser
 from lib.parsers.pdf_parser import PdfParser
 from lib.parsers.api_parser import APIParser
 import pathlib
-import os
 from tempfile import NamedTemporaryFile
-import sys
 import traceback
 
 
