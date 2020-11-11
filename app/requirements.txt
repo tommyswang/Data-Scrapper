@@ -5,7 +5,7 @@ flask-sqlalchemy==2.4.4
 SQLAlchemy-Utils==0.36.8
 mysql-connector-python==8.0.22
 pytest==6.1.2
-json-flatten==0.1
+flatten-json
 requests==2.24.0
 # selenium==3.141.0
 tabula-py==2.2.0

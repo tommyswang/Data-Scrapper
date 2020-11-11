@@ -2,7 +2,6 @@ function apiCall(data) {
     let structured = data.getElementsByTagName('input').structured;
     let value = data.getElementsByTagName('input').api_url.value;
     if( value === "" ) {
-        console.log("error");
         alert("Search Field is Empty");
         return false;
     } else {

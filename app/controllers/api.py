@@ -8,18 +8,14 @@ controller = Blueprint('api', __name__ )
 def api():
     return render_template("api.html")
 
-
 @controller.route('/api', methods=['POST'])
 def create_api_job():
-    print("Hello")
     json_format = request.form['json_format']
-    URL = request.form['url']
-    print(json_format)
-    job = ScrapeJob(JobType.API, URL, json_format)
+    url = request.form['url']
+    job = ScrapeJob(JobType.API, url, json_format)
     print(job)
     if job:
         job.run()
-        print("Running Job")
         return render_template("api.html", error="Running Job")
     else:
         return render_template("api.html", error="Something Went Wrong")
