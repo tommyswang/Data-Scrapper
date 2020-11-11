@@ -24,6 +24,9 @@ def create_pdf_job():
         db.session.add(job)
         db.session.commit()
 
+        # Kick off the Job Now
+        job.run()
+
         return redirect('/pdf')
     else:
         return redirect(request.url)

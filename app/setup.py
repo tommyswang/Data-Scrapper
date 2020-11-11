@@ -9,6 +9,7 @@ from controllers.form import controller as form_controller
 from controllers.html import controller as html_controller
 from controllers.pdf import controller as pdf_controller
 from controllers.api import controller as api_controller
+from controllers.jobs import controller as jobs_controller
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -33,6 +34,7 @@ def create_app(testing=False):
     app.register_blueprint(pdf_controller)
     app.register_blueprint(html_controller)
     app.register_blueprint(form_controller)
+    app.register_blueprint(jobs_controller)
 
     db.init_app(app)
 
