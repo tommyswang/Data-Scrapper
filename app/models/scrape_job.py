@@ -29,7 +29,8 @@ class ScrapeJob(db.Model):
         'scrape_file.id'), unique=False)
     extra = db.Column(db.Text)
     name = db.Column(db.String(64))
-    created = db.Column(db.DateTime(True))
+    sys_created_on = db.Column(db.DateTime(True))
+    sys_updated_on = db.Column(db.DateTime(True))
     file = db.relationship("ScrapeFile")
     inputFile = db.relationship("ScrapeFile")
 
@@ -49,7 +50,8 @@ class ScrapeJob(db.Model):
         self.extra = extra
         self.name = hashlib.md5(str(random.random()).encode(
             'utf-8')).hexdigest()[:HASH_DIGITS]
-        self.created = datetime.datetime.now()
+        self.sys_created_on = datetime.datetime.now()
+        self.sys_updated_on = datetime.datetime.now()
 
     def run(self):
         self.status = JobStatus.RUNNING
