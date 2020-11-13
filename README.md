@@ -34,7 +34,7 @@ We use Makefile to make development and testing more convenient.
 * `make update`: update database schema and Python packages.
 * `make server`: start app server on local.
 * `make test`: run test suite.
-
+* `make clear`: clear all data
 
 ### First time Setup
 

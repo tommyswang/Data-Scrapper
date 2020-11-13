@@ -4,6 +4,8 @@ DB_NAME=data_scrapper
 setup:
 	@mysql -u $(DB_USER) -e "create database if not exists $(DB_NAME)"
 	@mysql -u $(DB_USER) -e "create database if not exists $(DB_NAME)_test"
+	@mysql -u $(DB_USER) $(DB_NAME) < schema.sql
+	@mysql -u $(DB_USER) $(DB_NAME)_test < schema.sql
 	@mkdir -p files
 
 update:
@@ -27,3 +29,10 @@ server: # run server
 
 test:
 	pytest -v
+
+clear:
+	@rm -rf ./files/*
+	@mysql -u $(DB_USER) -e "drop database $(DB_NAME)"
+	@mysql -u $(DB_USER) -e "drop database $(DB_NAME)_test"
+	@make setup
+	@echo "Data cleared"
