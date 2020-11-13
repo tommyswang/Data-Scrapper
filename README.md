@@ -16,46 +16,51 @@
 * Tommy Wang
 * Zahiduzzaman Biswas
 
-## Deployment
-
-### Local development
+## Local development
 
 **Pre-requisites**
 
-* Python3
+* Python3, pip3
 * Docker
 * MySQL server
 
-
 **NOTE: after pull from master branch, always install packages from `app/requirements.txt`**
 
-### First time running setup
+We use Makefile to make development and testing more convenient.
 
-Create the database on local:
+**NOTE: `make` command should be executed inside `app/` ONLY :**
 
-```
-mysql -u root -e "create database data_scrapper"
-```
+* `make setup`: create local database etc,.
+* `make update`: update database schema and Python packages.
+* `make server`: start app server on local.
+* `make test`: run test suite.
 
-#### Run server without docker
 
-```shell
-# update packages
-pip3 install -r app/requirements.txt
-mkdir -p app/files
+### First time Setup
 
-# run server
-python3 app/main.py
-```
+Run command `make setup && make update`.
 
-To switch environment, use `ENV=<env name> python3 app/main.py`. Available environments are:
+This does:
+
+* Create local database
+* Install Python packages
+
+If you need to change database configuration, please update the `app/makefile` locally.
+
+### Run server without Docker
+
+NOTE: after pulling the latest master branch, run `make update`.
+
+Run command `make server`.
+
+To switch environment, execute `ENV=<env name> python3 app/main.py`. Available environments are:
 
 * `dev_local` (default)
 * `dev_remote`
 * `production`
 
 
-#### Run server With docker (TODO)
+### Run server With docker (TODO)
 
 (As we are using a separate container for MySQL, this method for development is not support)
 
@@ -80,6 +85,6 @@ docker stop ds
 docker rm ds
 ```
 
-### Deploy to HDAP
+## Deployment to HDAP
 
 Any update to the `deploy` branch will automatically trigger a deployment to HDAP.
