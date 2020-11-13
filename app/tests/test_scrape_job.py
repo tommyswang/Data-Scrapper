@@ -18,7 +18,7 @@ def setup_app_db():
     return app, db
 
 
-def test_parser():
+def test_run_job():
     app, db = setup_app_db()
 
     job = None

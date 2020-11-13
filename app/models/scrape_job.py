@@ -14,6 +14,8 @@ import sys
 from zipfile import ZipFile
 import traceback
 import hashlib
+import random
+import datetime
 
 HASH_DIGITS = 8
 
@@ -45,11 +47,9 @@ class ScrapeJob(db.Model):
         self.jobType = jobType
         self.jobInput = jobInput
         self.extra = extra
-
-        db.session.add(self)
-        db.session.flush()
-        self.name = hashlib.md5(str(self.id).encode(
+        self.name = hashlib.md5(str(random.random()).encode(
             'utf-8')).hexdigest()[:HASH_DIGITS]
+        self.created = datetime.datetime.now()
 
     def run(self):
         self.status = JobStatus.RUNNING

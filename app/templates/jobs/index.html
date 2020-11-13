@@ -7,12 +7,14 @@
             <tr>
                 <th>ID</th>
                 <th>Status</th>
+                <th>Creation time</th>
             </tr>
 
             {% for job in jobs %}
             <tr>
                 <td><a href="{{ url_for('jobs.detail', job_id=job.id) }}">{{ hash(job.id, 8) }}</a> </td>
                 <td>{{ job.status }}</td>
+                <td>{{ job.created }}</td>
             </tr>
             {% endfor %}
 
