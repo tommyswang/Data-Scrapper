@@ -13,6 +13,11 @@ from tempfile import NamedTemporaryFile
 import sys
 from zipfile import ZipFile
 import traceback
+import hashlib
+import random
+import datetime
+
+HASH_DIGITS = 8
 
 
 class ScrapeJob(db.Model):
@@ -23,6 +28,9 @@ class ScrapeJob(db.Model):
     fileId = db.Column(db.String(64), db.ForeignKey(
         'scrape_file.id'), unique=False)
     extra = db.Column(db.Text)
+    name = db.Column(db.String(64))
+    sys_created_on = db.Column(db.DateTime(True))
+    sys_updated_on = db.Column(db.DateTime(True))
     file = db.relationship("ScrapeFile")
     inputFile = db.relationship("ScrapeFile")
 
@@ -40,6 +48,10 @@ class ScrapeJob(db.Model):
         self.jobType = jobType
         self.jobInput = jobInput
         self.extra = extra
+        self.name = hashlib.md5(str(random.random()).encode(
+            'utf-8')).hexdigest()[:HASH_DIGITS]
+        self.sys_created_on = datetime.datetime.now()
+        self.sys_updated_on = datetime.datetime.now()
 
     def run(self):
         self.status = JobStatus.RUNNING
@@ -65,7 +77,6 @@ class ScrapeJob(db.Model):
             db.session.add(self)
             db.session.commit()
 
-            # TODO: logic not correct
         except Exception as e:
             traceback.print_exc()
             if hasattr(e, 'message'):
