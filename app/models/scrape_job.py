@@ -1,11 +1,11 @@
-from flask_sqlalchemy import SQLAlchemy
+
 from db import db
 from flask import current_app
-
 from models.job_attr import JobStatus, JobType
 from models.scrape_file import ScrapeFile, FILE_DIR
 from lib.parsers.html_parser import HTMLParser
 from lib.parsers.pdf_parser import PdfParser
+from lib.parsers.api_parser import APIParser
 import pathlib
 import uuid
 import os
@@ -52,6 +52,8 @@ class ScrapeJob(db.Model):
                 parser = HTMLParser(self.jobInput)
             elif self.jobType == JobType.PDF:
                 parser = self.__get_pdf_parser()
+            elif self.jobType == JobType.API:
+                parser = APIParser(self.jobInput, self.extra)
 
             outputs = parser.parse()
 
