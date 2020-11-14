@@ -3,3 +3,4 @@ venv/
 .DS_Store
 __init__.pyc
 app/files/
+.idea/
