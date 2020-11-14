@@ -1,8 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, current_app, request, redirect
 
-from models.scrape_file import ScrapeFile
 from models.scrape_job import ScrapeJob
-
+from models.job_attr import JobStatus
 import hashlib
 
 controller = Blueprint('jobs', __name__)
@@ -22,5 +21,15 @@ def index():
 
 @controller.route('/job/<job_id>', methods=['GET'])
 def detail(job_id):
-    job = ScrapeJob.query.filter_by(id=job_id)
-    return render_template("jobs.html", job)
+    referrer = request.referrer
+    job = ScrapeJob.query.filter_by(id=job_id).first()
+    if job != None:
+        file_name = None
+        if job.file:
+            file_name = job.file.path.split("/")[-1]
+        job_status_class = JobStatus
+        return render_template("jobs/detail.html", job=job, job_status=job_status_class, file_name=file_name)
+    else:
+        msg = 'Job does not exist'
+        path = referrer if referrer else '/jobs'
+        return redirect(path, error=msg)
