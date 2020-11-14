@@ -1,8 +1,11 @@
 import requests
 import pandas as pd
 from flatten_json import flatten
+
+
 class APIParser:
     """Takes in url and json_format (flat, structured)"""
+
     def __init__(self, url, json_format):
         self.url = url
         self.json_format = json_format

@@ -10,7 +10,6 @@ setup:
 
 update:
 	@pip3 install -r requirements.txt
-	@pip install -r requirements.txt
 	@echo "Python packages updated"
 
 	@mysqldump --no-create-info --complete-insert -u $(DB_USER) $(DB_NAME) > data.sql
@@ -28,7 +27,7 @@ server: # run server
 	python3 main.py
 
 test:
-	pytest -v
+	python3 -m pytest -v
 
 clear:
 	@rm -rf ./files/*

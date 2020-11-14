@@ -55,4 +55,4 @@ def test_creation():
         db.session.commit()
 
     assert job.name != "" and job.name != None
-    assert job.created != "" and job.created != None
+    assert job.sys_created_on != "" and job.sys_created_on != None
