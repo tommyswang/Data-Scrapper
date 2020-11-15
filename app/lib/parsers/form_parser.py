@@ -2,7 +2,6 @@ import re
 import pandas as pd
 import pdfplumber
 
-
 class FormParser:
     def __init__(self, path):
         self.path = path
