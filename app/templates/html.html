@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block body %}
 <div class="text-center">
-    <form id="form_search" action="/html" method="post">
+    <form id="form_search" action="{{ url_for('html.create_html_job') }}" method="post">
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
                 <h1>HTML</h1>

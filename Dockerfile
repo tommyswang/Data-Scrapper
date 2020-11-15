@@ -1,7 +1,7 @@
 FROM python:3.8-slim as builder
 
 RUN apt-get update -y && \
-  apt-get install -y python3-pip python-dev nginx curl  vim procps
+  apt-get install -y python3-pip python-dev nginx curl  vim procps mysql-client
 
 RUN mkdir -p /deploy
 

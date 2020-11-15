@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block body %}
 <div class="text-center">
-    <form id="form_search" action="/form" method="post" enctype="multipart/form-data">>
+    <form id="form_search" action="{{ url_for('form.create_form_job') }}" method="post" enctype="multipart/form-data">>
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
                 <h1>FORM</h1>
