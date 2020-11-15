@@ -72,5 +72,4 @@ class FormParser:
                 updated_fields[key] = [item[0].replace('_', '').strip()]
             else:
                 updated_fields[key] = ['']
-
         return [pd.DataFrame.from_dict(updated_fields).to_csv()]
