@@ -24,12 +24,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">DataScrapper</a>
+                <a class="navbar-brand" href="{{ url_for('home.index') }}">DataScrapper</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/jobs">JOBS</a></li>
-                    <li><a href="/">HOME</a></li>
+                    <li><a href="{{ url_for('jobs.index') }}">JOBS</a></li>
+                    <li><a href="{{ url_for('home.index') }}">HOME</a></li>
                     <li><a href="/login">LOGIN</a></li>
                 </ul>
             </div>
