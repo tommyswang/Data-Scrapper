@@ -6,7 +6,7 @@ from models.scrape_file import ScrapeFile, FILE_DIR
 from lib.parsers.html_parser import HTMLParser
 from lib.parsers.pdf_parser import PdfParser
 from lib.parsers.api_parser import APIParser
-from lib.parsers.form_parser import FORMParser
+from lib.parsers.form_parser import FormParser
 import pathlib
 import uuid
 import os
@@ -110,7 +110,7 @@ class ScrapeJob(db.Model):
             id=self.jobInput).first()
 
         local_file_path = str(root_path) + input_file_obj.path
-        return FORMParser(local_file_path)
+        return FormParser(local_file_path)
 
     def __zip_csv_files(self, outputs):
         zip_name = str(self.id) + '.zip'

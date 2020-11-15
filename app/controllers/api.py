@@ -15,8 +15,6 @@ def create_api_job():
     job = ScrapeJob(JobType.API, url, json_format)
     if job:
         job.run()
-        return render_template("api.html", error="Running Job")
+        return render_template("api.html", info="Running Job")
     else:
         return render_template("api.html", error="Something Went Wrong")
-
-

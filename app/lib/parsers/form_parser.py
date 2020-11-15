@@ -73,4 +73,4 @@ class FormParser:
             else:
                 updated_fields[key] = ['']
                 
-        return pd.DataFrame.from_dict(updated_fields).to_csv()
+        return [pd.DataFrame.from_dict(updated_fields).to_csv()]

@@ -17,3 +17,4 @@ def create_html_job():
         return render_template("html.html", info="Running Job")
     else:
         return render_template("html.html", error="Error: No Job Found.")
+        
