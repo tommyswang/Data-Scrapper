@@ -6,7 +6,7 @@ from models.scrape_file import ScrapeFile, FILE_DIR
 from lib.parsers.html_parser import HTMLParser
 from lib.parsers.pdf_parser import PdfParser
 from lib.parsers.api_parser import APIParser
-from lib.parsers.api_parser import FORMParser
+from lib.parsers.form_parser import FORMParser
 import pathlib
 import uuid
 import os
