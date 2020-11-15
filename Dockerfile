@@ -1,4 +1,4 @@
-FROM python:3.8-slim as builder
+FROM python:3.8 as builder
 
 RUN apt-get update -y && \
   apt-get install -y python3-pip python-dev nginx
