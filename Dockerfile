@@ -14,9 +14,9 @@ COPY ./nginx.conf /etc/nginx/sites-available/default
 RUN pip3 install -r requirements.txt
 RUN pip3 install gunicorn
 
-EXPOSE 5000
+EXPOSE 80
 
-ENV ENV=dev_remote
+ENV ENV=production
 
-# ENTRYPOINT ["./prod-start.sh"]
-ENTRYPOINT ["python3", "main.py"]
+ENTRYPOINT ["./prod-start.sh"]
+# ENTRYPOINT ["python3", "main.py"]
