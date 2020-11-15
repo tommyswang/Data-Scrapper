@@ -2,6 +2,7 @@ import re
 import pandas as pd
 import pdfplumber
 
+
 class FormParser:
     def __init__(self, path):
         self.path = path
@@ -14,11 +15,11 @@ class FormParser:
         """
         pdf = pdfplumber.open(self.path)
 
-        # Extract complete text in the form 
+        # Extract complete text in the form
         all_page =''
         for page in pdf.pages:
           all_page += page.extract_text()
-        
+
         # define all the fields
         fields = {"CDC 2019-nCoV ID" : "CDC 2019-nCoV ID:(.*) \n",
           'Patient first name' : 'Patient first name(.*) P',
@@ -59,7 +60,7 @@ class FormParser:
           'Patient Residence at Case' : '',
           'Specimen for Covid Testing' : '[1|2|3]\)(.*)',
           'Chronic Disease' : 'yes, specify:(.*)\n.*Other',
-          'Disability':'',     
+          'Disability':'',
           'Type of Disability': 'Other chronic diseases  If yes, specify:(.*)',
           'Comments or Notes':'Additional Comments or Notes\n \n \n(.*)'
           }
@@ -72,5 +73,5 @@ class FormParser:
                 updated_fields[key] = [item[0].replace('_', '').strip()]
             else:
                 updated_fields[key] = ['']
-                
+
         return [pd.DataFrame.from_dict(updated_fields).to_csv()]
