@@ -11,8 +11,7 @@ CREATE TABLE `scrape_job` (
   `sys_created_on` timestamp DEFAULT CURRENT_TIMESTAMP,
   `sys_updated_on` timestamp DEFAULT CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ;
-
+);
 
 DROP TABLE IF EXISTS `scrape_file`;
 CREATE TABLE `scrape_file` (
@@ -24,4 +23,3 @@ CREATE TABLE `scrape_file` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 );
-
