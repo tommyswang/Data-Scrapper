@@ -1,7 +1,7 @@
 FROM python:3.8
 
 RUN apt-get update -y && \
-  apt-get install -y python3-pip python-dev nginx vim procps default-jre
+  apt-get install -y python3-pip python-dev nginx vim curl procps default-jre
 
 RUN mkdir -p /deploy
 
