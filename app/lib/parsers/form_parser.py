@@ -67,9 +67,14 @@ class FormParser:
         # create a filled valued dictionary in order to convert it to pd.DataFrame.to_csv
         updated_fields = {}
         for key, val in fields.items():
-            item = re.findall(val, first_page)
-            if len(item) != 0:
-                updated_fields[key] = [item[0].replace('_', '').strip()]
-            else:
-                updated_fields[key] = ['']
+            try:
+              item = re.findall(val, all_page)
+              if len(item) != 0:
+                  updated_fields[key] = [item[0].replace('_', '').strip()]
+              else:
+                  updated_fields[key] = ['']
+            except:
+              updated_fields[key] = ['']
+              continue
+
         return [pd.DataFrame.from_dict(updated_fields).to_csv()]
