@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from db import db
 from models.scrape_file import ScrapeFile
 from models.scrape_job import ScrapeJob
