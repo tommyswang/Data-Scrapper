@@ -63,10 +63,11 @@ def create_app(testing=False):
 def load_config(app):
     current_abs_path = pathlib.Path(__file__).resolve().parents[0]
     config_file_path = f"{current_abs_path}/configs/{env_name}.py"
-    if not path.exists(config_file_path):
+
+    if path.exists(config_file_path):
+        app.logger.info(f"Loads config from {config_file_path}")
+    else:
         app.logger.error(
             f"Config file for ENV {env_name} at path {config_file_path} does not exist. Exit.")
         exit(1)
-    else:
-        app.logger.info(f"Loads config from {config_file_path}")
     app.config.from_pyfile(config_file_path)
