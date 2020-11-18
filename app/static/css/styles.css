@@ -207,3 +207,16 @@ row {
         transform: rotate(360deg);
     }
 }
+
+.footer-navbar li a {
+    padding: 0 5px;
+}
+
+.footer-navbar li::after {
+    content: '|';
+    padding: 0 5px 0 15px;
+}
+
+.footer-navbar li:last-child::after {
+    content: "";
+}

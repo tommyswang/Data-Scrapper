@@ -5,7 +5,7 @@ controller = Blueprint('home', __name__)
 
 @controller.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html", nofooternav=True)
 
 
 @controller.route('/hello')

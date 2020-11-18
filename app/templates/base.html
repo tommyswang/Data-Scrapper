@@ -64,6 +64,16 @@
     <!-- Footer -->
     <footer class="panel-footer bg-4 text-center">
         <p>TEAM HZ-TASK | Health Informatics | Fall 2020</p>
+        {% if not nofooternav is defined %}
+        <p>
+            <ul class="list-inline footer-navbar" id="footer-navbar">
+                <li><a href="{{ url_for('form.form') }}">Form</a></li>
+                <li><a href="{{ url_for('api.api') }}">API</a></li>
+                <li><a href="{{ url_for('html.html') }}">HTML</a></li>
+                <li><a href="{{ url_for('pdf.pdf') }}">PDF</a></li>
+            </ul>
+        </p>
+        {% endif %}
     </footer>
     <script src="{{ url_for('static', filename='js/api.js')}}"></script>
 </body>
