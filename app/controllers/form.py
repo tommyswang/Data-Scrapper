@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, redirect, url_for
 from db import db
 from models.scrape_file import ScrapeFile
 from models.scrape_job import ScrapeJob
@@ -27,6 +27,6 @@ def create_form_job():
         # Kick off the Job Now
         job.run()
 
-        return render_template("form.html", info="Running Job")
+        return redirect(url_for('jobs.detail', job_id=job.id))
     else:
         return render_template("form.html", error="Job Failed. ERROR INFO: NoFileFoundError. Upload the file and try again.")
