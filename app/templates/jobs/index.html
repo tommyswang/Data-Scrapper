@@ -6,17 +6,19 @@
         <table class="table">
             <tr>
                 <th>ID</th>
+                <th>Type</th>
+                <th>File name</th>
                 <th>Status</th>
                 <th>Creation time</th>
-                <th>Last update time</th>
             </tr>
 
             {% for job in jobs %}
             <tr>
                 <td><a href="{{ url_for('jobs.detail', job_id=job.id) }}">{{ hash(job.id, 8) }}</a> </td>
+                <td>{{ job.jobType }}</td>
+                <td>{{ job.file.name }}</td>
                 <td>{{ job.status }}</td>
                 <td>{{ job.sys_created_on }}</td>
-                <td>{{ job.sys_updated_on }}</td>
             </tr>
             {% endfor %}
 

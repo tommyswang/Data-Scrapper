@@ -6,13 +6,14 @@
             {% if job.file == None and job.status == job_status.FINISHED %}
             <h2>No CSV file generated. Please check the input.</h2>
             {% else %}
-            <h2> Your job is {{ job.status }} </h2>
+            <h2> Your job is {{ job.status }}</h2>
             {% endif %}
 
-            <h4> Start Time: {{ job.sys_created_on }}</h4>
+            <h4>Job Type: {{ job.jobType }}</h4>
+            <h4>Start Time: {{ job.sys_created_on }}</h4>
 
             {% if job.sys_updated_on != None %}
-            <h4> End Time: {{ job.sys_updated_on }} </h4>
+            <h4>End Time: {{ job.sys_updated_on }}</h4>
             {% endif %} {% if job.status == job_status.RUNNING %}
             <div class="lds-dual-ring"></div>
             {% elif file_name != None %}
