@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, url_for
 from db import db
 from models.scrape_file import ScrapeFile
 from models.scrape_job import ScrapeJob
@@ -27,6 +27,6 @@ def create_pdf_job():
         # Kick off the Job Now
         job.run()
 
-        return redirect('/pdf')
+        return redirect(url_for('jobs.detail', job_id=job.id))
     else:
-        return redirect(request.url)
+        return render_template("pdf.pdf", error="Parsing job was not created.")

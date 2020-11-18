@@ -1,6 +1,6 @@
 from models.scrape_job import ScrapeJob
 from models.job_attr import JobType
-from flask import Blueprint, render_template, request, send_file, safe_join
+from flask import Blueprint, render_template, request, redirect, url_for
 controller = Blueprint('api', __name__ )
 
 
@@ -15,8 +15,6 @@ def create_api_job():
     job = ScrapeJob(JobType.API, url, json_format)
     if job:
         job.run()
-        return render_template("api.html", error="Running Job")
+        return redirect(url_for('jobs.detail', job_id=job.id))
     else:
-        return render_template("api.html", error="Something Went Wrong")
-
-
+        return render_template("api.html", error="Parsing job was not created.")

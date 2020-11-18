@@ -16,5 +16,8 @@ RUN pip3 install -r requirements.txt
 EXPOSE 80
 
 ENV ENV=production
+ENV DB_USER=abc123456
+ENV DB_PASS=abc123456
+ENV DB_CONN=data-scrapper-db-service.ns-data-scrapper
 
 ENTRYPOINT ["./prod-start.sh"]

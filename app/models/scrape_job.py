@@ -6,6 +6,7 @@ from models.scrape_file import ScrapeFile, FILE_DIR
 from lib.parsers.html_parser import HTMLParser
 from lib.parsers.pdf_parser import PdfParser
 from lib.parsers.api_parser import APIParser
+from lib.parsers.form_parser import FormParser
 import pathlib
 import uuid
 import os
@@ -66,6 +67,8 @@ class ScrapeJob(db.Model):
                 parser = self.__get_pdf_parser()
             elif self.jobType == JobType.API:
                 parser = APIParser(self.jobInput, self.extra)
+            elif self.jobType == JobType.FORM:
+                parser = self.__get_form_parser()
 
             outputs = parser.parse()
 
@@ -99,6 +102,15 @@ class ScrapeJob(db.Model):
 
         local_file_path = str(root_path) + input_file_obj.path
         return PdfParser(local_file_path)
+
+    def __get_form_parser(self):
+        root_path = pathlib.Path(
+            __file__).resolve().parents[1]
+        input_file_obj = ScrapeFile.query.filter_by(
+            id=self.jobInput).first()
+
+        local_file_path = str(root_path) + input_file_obj.path
+        return FormParser(local_file_path)
 
     def __zip_csv_files(self, outputs):
         zip_name = str(self.id) + '.zip'
