@@ -1,14 +1,20 @@
 {% extends "base.html" %} {% block body %}
-<div class="text-center">
-    <form id="form_search" action="{{ url_for('pdf.create_pdf_job') }}" method="post" enctype="multipart/form-data">>
-        <div class="container h-100">
-            <div class="d-flex justify-content-center h-100">
-                <h1>PDF</h1>
-                <input type="file" name="file">
-                <input type="submit" value="Submit">
-            </div>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>PDF</h1>
+            <form id="form_search" action="{{ url_for('pdf.create_pdf_job') }}" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">File upload</label>
+                    <input type="file" name="file">
+                </div>
+
+                <input type="submit" value="Submit" class="btn btn-success">
+            </form>
+            <br>
+            <input type="button" value="Go back" onclick="history.back()" class="btn btn-default">
         </div>
-        <input type="button" value="Go back" onclick="history.back()">
-    </form>
+    </div>
 </div>
 {% endblock %}
