@@ -12,6 +12,11 @@ frontend:
     repository: gt-build.hdap.gatech.edu/data-scrapper
     tag: latest
     pullPolicy: Always
+  env:
+    ENV: production
+    DB_USER: root
+    DB_PASS: abc123456
+    DB_CONN: data-scrapper-db-service.ns-data-scrapper
 
 database:
   name: data-scrapper-db
