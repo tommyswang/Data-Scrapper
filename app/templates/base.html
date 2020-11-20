@@ -47,14 +47,14 @@
 
     <!-- banner -->
     {% if self.banner() %}
-    <div class="container-fluid bg-1 text-center">
+    <div class="container-fluid bg-1 text-center content">
         {% block banner %}{% endblock %}
     </div>
     {% endif %}
 
     <!-- First Container -->
     {% if self.body() %}
-    <div class="container-fluid">
+    <div class="container-fluid content">
         {% block body %}{% endblock %}
     </div>
     {% endif %}

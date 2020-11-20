@@ -7,7 +7,7 @@ p {
 }
 
 .bg-1 {
-    background-color: #BA0C2F;
+    background-color: #5cb85c;
     /* Bulldog Red */
     color: #ffffff;
 }
@@ -82,7 +82,7 @@ html {
     border: 0;
     outline: 0;
     background: none;
-    width: 450;
+    width: 450px;
     caret-color: transparent;
     line-height: 40px;
     transition: width 0.4s linear;
@@ -132,7 +132,13 @@ row {
 }
 
 .card:hover {
-    background: #fdad5c !important;
+    background: #5cb85c !important;
+    /* Bootstrap Success Green Color */
+}
+
+.card>a:hover {
+    text-decoration: none;
+    color: white !important;
 }
 
 .card {
@@ -140,6 +146,7 @@ row {
     min-height: 270px !important;
     height: 270px !important;
     background: white;
+    border-radius: 3%;
 }
 
 .card-body {
@@ -150,13 +157,13 @@ row {
 
 .card-title {
     color: black;
-    font-size: 16px !important;
+    font-size: 18px !important;
     font-weight: bold;
 }
 
 .card-text {
     color: black;
-    font-size: 11px !important;
+    font-size: 15px !important;
     overflow: hidden;
 }
 
@@ -219,4 +226,8 @@ row {
 
 .footer-navbar li:last-child::after {
     content: "";
+}
+
+.content {
+    min-height: calc(100vh - 130px);
 }
