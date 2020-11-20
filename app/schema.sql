@@ -1,3 +1,4 @@
+
 DROP TABLE IF EXISTS `scrape_job`;
 CREATE TABLE `scrape_job` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -22,4 +23,3 @@ CREATE TABLE `scrape_file` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 );
-
