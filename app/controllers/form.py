@@ -6,6 +6,7 @@ from models.job_attr import JobType
 
 controller = Blueprint('form', __name__)
 
+
 @controller.route('/form', methods=['GET'])
 def form():
     return render_template("form.html")

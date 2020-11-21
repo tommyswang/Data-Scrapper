@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 from configs.common import *
 import os
 
@@ -22,4 +26,8 @@ DB_USER = os.environ.get("DB_USER", "root")
 DB_PASS = os.environ.get("DB_PASS", "abc123456")
 DB_CONN = os.environ.get("DB_CONN", "data-scrapper-db-service.ns-data-scrapper")
 
+<<<<<<< HEAD
 SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://{user}:{password}@{server}/{database}'.format(user=DB_USER, password=DB_PASS, server=DB_CONN, database='data_scrapper')
+=======
+SQLALCHEMY_DATABASE_URI = 'mysql+mysqlconnector://{user}:{password}@{server}/{database}'.format(user=DB_USER, password=DB_PASS, server=DB_CONN, database='data_scrapper')
+>>>>>>> master

@@ -3,7 +3,7 @@ global:
 
 frontend:
   name: frontend
-  port: 5000
+  port: 80
   replicaCount: 1
   proxy:
     incomingPath: /data-scrapper-app/
@@ -17,7 +17,7 @@ frontend:
     DB_USER: root
     DB_PASS: abc123456
     DB_CONN: data-scrapper-db-service.ns-data-scrapper
-    
+
 database:
   name: data-scrapper-db
   port: 3306
