@@ -3,7 +3,7 @@ global:
 
 frontend:
   name: frontend
-  port: 80
+  port: 5000
   replicaCount: 1
   proxy:
     incomingPath: /data-scrapper-app/

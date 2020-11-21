@@ -1,3 +1,4 @@
+
 from configs.common import *
 import os
 
@@ -7,14 +8,12 @@ SCRIPT_NAME = "/data-scrapper-app"
 
 '''
 DB
-
 DB Container:
     data-scrapper-db-service is our DB Service name and this is set in values.yaml
     GA Tech HDAP uses the following pattern 
     ${Host name}.${App scope is provided by this course}
     data-scrapper-db-service.ns-data-scrapper
     DB Service root user and its password are also set via ENV in values.yaml in a different container
-
 APP Container:
     DB_USER, DB_PASS, DB_CONN are set in DOCKERFILE. 
     //TODO I want to move all Env settings in values.yaml 
