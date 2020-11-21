@@ -1,21 +1,25 @@
 import uuid
 import hashlib
-from setup import db
+from db import db
 import pathlib
 import os
+import datetime
 
 FILE_DIR = "files"
-
 
 class ScrapeFile(db.Model):
 
   id = db.Column(db.String(64), primary_key=True)
   name = db.Column(db.String(64), unique=True)
   path = db.Column(db.Text)
+  sys_created_on = db.Column(db.DateTime(True))
+  sys_updated_on = db.Column(db.DateTime(True))
 
   def __init__(self, file):
     self.id = uuid.uuid1().hex.upper()[:8]
     self.name = hashlib.md5(str(self.id).encode('utf-8')).hexdigest()
+    self.sys_created_on = datetime.datetime.now()
+    self.sys_updated_on = datetime.datetime.now()
 
     # Save file to local data storage. Save file path to database
     op = getattr(file, "save", None)

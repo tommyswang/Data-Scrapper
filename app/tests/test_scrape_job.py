@@ -18,7 +18,7 @@ def setup_app_db():
     return app, db
 
 
-def test_parser():
+def test_run_job():
     app, db = setup_app_db()
 
     job = None
@@ -37,3 +37,22 @@ def test_parser():
         job.run()
 
     assert job.status == JobStatus.FINISHED
+
+
+def test_creation():
+    app, db = setup_app_db()
+    job = None
+
+    cnt_path = root_path = pathlib.Path(__file__).resolve().parents[0]
+    file_path = os.path.join(cnt_path, "form.pdf")
+
+    with open(file_path, "rb") as f:
+        sf = ScrapeFile(f)
+        job = ScrapeJob(JobType.PDF, sf.id)
+
+        db.session.add(sf)
+        db.session.add(job)
+        db.session.commit()
+
+    assert job.name != "" and job.name != None
+    assert job.sys_created_on != "" and job.sys_created_on != None

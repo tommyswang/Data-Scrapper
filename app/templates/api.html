@@ -1,74 +1,34 @@
-{% extends "base.html" %}
-
-{% block body %}
+{% extends "base.html" %} {% block body %}
 <script src="{{url_for('static', filename='js/api.js')}}"></script>
-<!--TODO Make Error a fragment to include in all forms-->
-    {% if error %}
-    <span>Invalid Fhir Resource</span>
-    {% endif %}
-    {% if error == False %}
-    <input type="hidden" name="safe_path" id="safe_path" value= {{ safe_path }} >
-    {% endif %}
-  <form id="form_search" onsubmit="return apiCall(this)" method="post">
-  <div class="container h-100">
-    <div class="d-flex justify-content-center h-100">
-        <h1>API</h1>
-        <div class="row">
-            <div class="col-md-12">
-                <label>URL</label>
-                <input type="text" name="url">
-                <input type="radio" name="flat">
-                <label>Flat</label>
-                <input type="radio" name="structured">
-                <label>Structured</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <input type="submit" value="Submit" class="apiUrl">
-            </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>API</h1>
+            <form id="form_search" onsubmit="return apiCall(this)" method="post">
+
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <input type="text" name="url" id="api_url" class="form-control">
+                </div>
+
+                <div class="form-group form-ratio">
+                    <label for="Output Style"></label>
+                    <input type="radio" name="json_format" id="flat" value="flat" checked>
+                    <label>Flat</label>
+                    <input type="radio" name="json_format" id="structured" value="structured">
+                    <label>Structured</label>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" value="Submit" class="apiUrl btn btn-success">Submit</button>
+                </div>
+
+            </form>
+            <input class="btn btn-default" type="button" value="Go back" onclick="history.back()">
+            <div id="data-link"></div>
         </div>
     </div>
-  </div>
-      <a href="/">Go Back</button></a>
-      <div id="data-link"></div>
-  </form>
-<script>
-<!--TODO extract and use the Scrape Job-->
-    if (document.getElementById('safe_path') != null) {
-        var url = window.location.origin + '/api/download';
-        console.log(url);
-        safe_path = document.getElementById('safe_path').value;
-        console.log(safe_path);
-        if (safe_path != '') {
-            var params = "?safe_path=" + safe_path;
-            console.log(params)
-            var http = new XMLHttpRequest();
-            http.open("POST", url + params, true);
-            http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            http.send(null)
-            http.onreadystatechange = function() {
-              console.log(http.readyState)
-              console.log(http.status)
-                if (http.readyState === 4 && http.status === 200) {
-                    const blob = new Blob([http.response]);
-                    const url = window.URL.createObjectURL(blob);
+</div>
 
-                    const link = document.createElement('a')
-                    link.href = url
-                    link.download = "data_file.csv"
-                    link.text = "Download"
-                    document.getElementById('data-link').append(link);
-                    setTimeout(() => {
-                        window.URL.revokeObjectURL(url);
-                        link.remove();
-
-                    }, 30000);
-                }
-
-            }
-        }
-
-    }
-</script>
 {% endblock %}

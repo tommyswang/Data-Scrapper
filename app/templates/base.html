@@ -10,8 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css')}}">
 </head>
 
@@ -25,26 +24,57 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">DataScrapper</a>
+                <a class="navbar-brand" href="{{ url_for('home.index') }}">DataScrapper</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="/login">LOGIN</a></li>
+                    <li><a href="{{ url_for('jobs.index') }}">CONVERSIONS</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <div>
+        <div class="container">
+            {% if error is defined %}
+            <div class="alert alert-danger">{{ error }}</div>
+            {% endif %} {% if info is defined %}
+            <div class="alert alert-info">{{ info }}</div>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <!-- banner -->
+    {% if self.banner() %}
+    <div class="container-fluid bg-1 text-center content">
+        {% block banner %}{% endblock %}
+    </div>
+    {% endif %}
+
     <!-- First Container -->
-    <div class="container-fluid bg-1 text-center">
+    {% if self.body() %}
+    <div class="container-fluid content">
         {% block body %}{% endblock %}
     </div>
+    {% endif %}
+
 
     <!-- Footer -->
     <footer class="panel-footer bg-4 text-center">
         <p>TEAM HZ-TASK | Health Informatics | Fall 2020</p>
+        {% if not nofooternav is defined %}
+        <p>
+            <ul class="list-inline footer-navbar" id="footer-navbar">
+                <li><a href="{{ url_for('form.form') }}">Form</a></li>
+                <li><a href="{{ url_for('api.api') }}">API</a></li>
+                <li><a href="{{ url_for('html.html') }}">HTML</a></li>
+                <li><a href="{{ url_for('pdf.pdf') }}">PDF</a></li>
+            </ul>
+        </p>
+        {% endif %}
     </footer>
+    <script src="{{ url_for('static', filename='js/api.js')}}"></script>
 </body>
 
 </html>

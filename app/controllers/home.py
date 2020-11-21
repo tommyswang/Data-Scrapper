@@ -5,12 +5,7 @@ controller = Blueprint('home', __name__)
 
 @controller.route('/')
 def index():
-    return render_template("index.html")
-
-
-@controller.route('/job/<hash>')
-def get_job(hash):
-    return "Building. You are trying to access job " + str(hash)
+    return render_template("index.html", nofooternav=True)
 
 
 @controller.route('/hello')

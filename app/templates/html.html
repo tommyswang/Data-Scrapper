@@ -1,15 +1,21 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block body %}
 
-{% block body %}
-  <form id="form_search" action="/html" method="post">
-  <div class="container h-100">
-    <div class="d-flex justify-content-center h-100">
-        <h1>HTML</h1>
-        <label>URL</label>
-        <input type="text" name="url">
-        <input type="submit" value="Submit" class="htmlUrl">
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <h1>HTML</h1>
+            <form id="form_search" action="{{ url_for('html.create_html_job') }}" method="post">
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <input type="text" name="url" class="form-control">
+                </div>
+
+                <input type="submit" value="Submit" class="htmlUrl btn btn-success">
+            </form>
+            <br>
+            <input type="button" value="Go back" onclick="history.back()" class="btn btn-default">
+        </div>
     </div>
-  </div>
-      <a href="/">Go Back</button></a>
-  </form>
+</div>
 {% endblock %}

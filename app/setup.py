@@ -1,25 +1,23 @@
 #!/usr/bin/env python3
 
-from flask import Flask, jsonify, render_template
+import logging
+import pathlib
+from os import path
+import os
+from controllers.home import controller as home_controller
+from controllers.form import controller as form_controller
+from controllers.html import controller as html_controller
+from controllers.pdf import controller as pdf_controller
+from controllers.api import controller as api_controller
+from controllers.jobs import controller as jobs_controller
+from controllers.download import controller as download_controller
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-
-db = SQLAlchemy()
-
-from models.scrape_job import ScrapeJob
-from models.scrape_file import ScrapeFile
-from controllers.api import controller as api_controller
-from controllers.pdf import controller as pdf_controller
-from controllers.html import controller as html_controller
-from controllers.form import controller as form_controller
-from controllers.home import controller as home_controller
-
-import os
-from os import path
-import pathlib
-import logging
+from db import db
 
 env_name = os.environ.get('ENV', 'dev_local')  # default ENV is dev_local
+
 
 def create_app(testing=False):
     app = Flask(__name__, template_folder='templates',
@@ -37,6 +35,8 @@ def create_app(testing=False):
     app.register_blueprint(pdf_controller)
     app.register_blueprint(html_controller)
     app.register_blueprint(form_controller)
+    app.register_blueprint(jobs_controller)
+    app.register_blueprint(download_controller)
 
     db.init_app(app)
 
@@ -59,13 +59,15 @@ def create_app(testing=False):
 
     return app
 
+
 def load_config(app):
     current_abs_path = pathlib.Path(__file__).resolve().parents[0]
     config_file_path = f"{current_abs_path}/configs/{env_name}.py"
-    if not path.exists(config_file_path):
+
+    if path.exists(config_file_path):
+        app.logger.info(f"Loads config from {config_file_path}")
+    else:
         app.logger.error(
             f"Config file for ENV {env_name} at path {config_file_path} does not exist. Exit.")
         exit(1)
-    else:
-        app.logger.info(f"Loads config from {config_file_path}")
     app.config.from_pyfile(config_file_path)
