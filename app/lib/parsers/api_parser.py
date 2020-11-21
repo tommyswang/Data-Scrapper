@@ -1,3 +1,5 @@
+from json import JSONDecodeError
+
 import requests
 import pandas as pd
 from flatten_json import flatten
@@ -17,7 +19,15 @@ class APIParser:
         """
 
         r = requests.get(self.url)
-        data = r.json()
+
+        try:
+            data = r.json()
+        except JSONDecodeError:
+            raise Exception("Sorry, url didn't return json")
+        except:
+            raise Exception("Something went wrong")
+
+
 
         if self.json_format == 'flat':
             if isinstance(data, list):
