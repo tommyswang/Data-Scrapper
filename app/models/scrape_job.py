@@ -84,10 +84,10 @@ class ScrapeJob(db.Model):
             traceback.print_exc()
             if hasattr(e, 'message'):
                 current_app.logger.error(
-                    "Parsing error [%]: %" % (self.id, e.message))
+                    "Parsing error [%s]: %s" % (self.id, e.message))
             else:
                 current_app.logger.error(
-                    "Parsing error [%]: %" % (self.id, e))
+                    "Parsing error [%s]: %s" % (self.id, e))
 
             self.status = JobStatus.FAILED
 
