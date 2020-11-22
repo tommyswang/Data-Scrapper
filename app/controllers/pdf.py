@@ -18,7 +18,12 @@ def create_pdf_job():
 
     if file.filename:
         sf = ScrapeFile(file)
-        job = ScrapeJob(JobType.PDF, sf.id)
+
+        extra = {
+            'file name': file.filename
+        }
+
+        job = ScrapeJob(JobType.PDF, sf.id, extra)
 
         db.session.add(sf)
         db.session.add(job)

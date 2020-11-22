@@ -18,7 +18,11 @@ def create_form_job():
 
     if file.filename:
         sf = ScrapeFile(file)
-        job = ScrapeJob(JobType.FORM, sf.id)
+
+        extra = {
+            'file name': file.filename
+        }
+        job = ScrapeJob(JobType.FORM, sf.id, extra)
 
         db.session.add(sf)
         db.session.add(job)

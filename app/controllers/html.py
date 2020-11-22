@@ -11,7 +11,12 @@ def html():
 @controller.route('/html', methods=['POST'])
 def create_html_job():
     url = request.form['url']
-    job = ScrapeJob(JobType.HTML, url)
+
+    extra = {
+        "url": url
+    }
+
+    job = ScrapeJob(JobType.HTML, url, extra)
     if job:
         job.run()
         return redirect(url_for('jobs.detail', job_id=job.id))

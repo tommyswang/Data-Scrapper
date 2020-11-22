@@ -1,7 +1,6 @@
 from models.scrape_job import ScrapeJob
 from models.job_attr import JobType
 from flask import Blueprint, render_template, request, redirect, url_for
-import json
 controller = Blueprint('api', __name__ )
 
 
@@ -22,7 +21,7 @@ def create_api_job():
         "json_format": json_format
     }
 
-    job = ScrapeJob(JobType.API, url, json.dumps(extra))
+    job = ScrapeJob(JobType.API, url, extra)
     if job:
         job.run()
         return redirect(url_for('jobs.detail', job_id=job.id))
