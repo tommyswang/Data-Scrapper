@@ -27,8 +27,11 @@ def detail(job_id):
         file_name = None
         if job.file:
             file_name = job.file.path.split("/")[-1]
-        job_status_class = JobStatus
-        return render_template("jobs/detail.html", job=job, job_status=job_status_class, file_name=file_name)
+        return render_template(
+            "jobs/detail.html",
+            job=job,
+            JobStatus=JobStatus,
+            file_name=file_name)
     else:
         msg = 'Job does not exist'
         path = referrer if referrer else '/jobs'
