@@ -15,8 +15,8 @@ def short_hash(value, digits):
 
 @controller.route('/jobs', methods=['GET'])
 def index():
-    jobs = ScrapeJob.query.all()
-    return render_template("jobs/index.html", jobs=jobs, hash=short_hash)
+    jobs = ScrapeJob.query.order_by(ScrapeJob.sys_created_on.desc()).all()
+    return render_template("jobs/index.html", jobs=jobs, hash=short_hash, JobStatus=JobStatus)
 
 
 @controller.route('/job/<job_id>', methods=['GET'])
