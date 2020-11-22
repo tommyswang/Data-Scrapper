@@ -10,6 +10,12 @@
             {% endif %}
 
             <h4>Job Type: {{ job.jobType }}</h4>
+            <h4>Job details</h4>
+            {% set detail_dict = job.detail_dict() %}
+            {% for k in detail_dict %}
+            <p><b>{{ k }}</b>: {{ detail_dict[k] }}</p>
+            {% endfor %}
+
             <h4>Start Time: {{ job.sys_created_on }}</h4>
 
             {% if job.sys_updated_on != None %}

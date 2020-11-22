@@ -17,6 +17,7 @@ import traceback
 import hashlib
 import random
 import datetime
+import json
 
 HASH_DIGITS = 8
 
@@ -35,7 +36,7 @@ class ScrapeJob(db.Model):
     file = db.relationship("ScrapeFile")
     inputFile = db.relationship("ScrapeFile")
 
-    def __init__(self, jobType, jobInput, extra=None):
+    def __init__(self, jobType, jobInput, extra_dict: dict=None):
         """Constructor of ScrapeJob.
 
         Args:
@@ -48,11 +49,22 @@ class ScrapeJob(db.Model):
         self.status = JobStatus.PENDING
         self.jobType = jobType
         self.jobInput = jobInput
-        self.extra = extra
+        self.extra = json.dumps(extra_dict)
         self.name = hashlib.md5(str(random.random()).encode(
             'utf-8')).hexdigest()[:HASH_DIGITS]
         self.sys_created_on = datetime.datetime.now()
         self.sys_updated_on = datetime.datetime.now()
+
+    def detail_strs(self):
+        job_extra = self.detail_dict()
+        ret = []
+        for k in job_extra:
+            ret.append(f"{k}: {job_extra[k]}")
+
+        return ret
+
+    def detail_dict(self):
+        return json.loads(self.extra)
 
     def run(self):
         self.status = JobStatus.RUNNING
@@ -66,7 +78,8 @@ class ScrapeJob(db.Model):
             elif self.jobType == JobType.PDF:
                 parser = self.__get_pdf_parser()
             elif self.jobType == JobType.API:
-                parser = APIParser(self.jobInput, self.extra)
+                job_extra = json.loads(self.extra)
+                parser = APIParser(self.jobInput, job_extra['json_format'])
             elif self.jobType == JobType.FORM:
                 parser = self.__get_form_parser()
 

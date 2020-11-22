@@ -56,3 +56,19 @@ def test_creation():
 
     assert job.name != "" and job.name != None
     assert job.sys_created_on != "" and job.sys_created_on != None
+
+def test_creation_with_extra():
+    app, db = setup_app_db()
+    job = None
+
+    extra = {
+        "json_format": "flat",
+        "url": "fake.url"
+    }
+
+    job = ScrapeJob(JobType.API, "fake.url", extra)
+
+    db.session.add(job)
+    db.session.commit()
+
+    assert job.extra == '{"json_format": "flat", "url": "fake.url"}'
