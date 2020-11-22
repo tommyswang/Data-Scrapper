@@ -18,10 +18,14 @@
                 <td>{{ job.jobType }}</td>
                 <td>
                     {% for k, v in job.detail_dict().items() %}
-                    <b>{{ k | capitalize }}</b>: {{ v }}<br />
-                    {% endfor %}
+                    <b>{{ k | capitalize }}</b>: {{ v }}<br /> {% endfor %}
                 </td>
-                <td>{{ job.status }}</td>
+                <td>
+                    {% if job.status == JobStatus.FINISHED %}
+                    <span class="label label-success">{{ job.status | capitalize }}</span> {% elif job.status == JobStatus.FAILED %}
+                    <span class="label label-danger">{{ job.status | capitalize }}</span> {% else %}
+                    <span>{{ job.status | capitalize }}</span> {% endif %}
+                </td>
                 <td>{{ job.sys_created_on }}</td>
             </tr>
             {% endfor %}
