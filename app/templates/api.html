@@ -1,34 +1,38 @@
 {% extends "base.html" %} {% block body %}
-<script src="{{url_for('static', filename='js/api.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+    <div class="container movedown">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h5>API</h5>
+                    </div>
+                    <div class="panel-body">
+                        <form id="form_search" onsubmit="return apiCall(this)" method="post">
+                            <div class="form-group">
+                                <label for="url">URL</label>
+                                <input type="text" name="url" id="api_url" class="form-control">
+                            </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <h1>API</h1>
-            <form id="form_search" onsubmit="return apiCall(this)" method="post">
+                            <div class="form-group form-ratio">
+                                <label for="Output Style"></label>
+                                <input type="radio" name="json_format" id="flat" value="flat" checked>
+                                <label>Flat</label>
+                                <input type="radio" name="json_format" id="structured" value="structured">
+                                <label>Structured</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Convert CSV" class="btn btn-success btn-block">
+                            </div>
 
-                <div class="form-group">
-                    <label for="url">URL</label>
-                    <input type="text" name="url" id="api_url" class="form-control">
+                            <div class="form-group">
+                                <input type="button" value="Go back" onclick="history.back()" class="btn btn-default btn-block">
+                                <div id="data-link"></div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-                <div class="form-group form-ratio">
-                    <label for="Output Style"></label>
-                    <input type="radio" name="json_format" id="flat" value="flat" checked>
-                    <label>Flat</label>
-                    <input type="radio" name="json_format" id="structured" value="structured">
-                    <label>Structured</label>
-                </div>
-
-                <div class="form-group">
-                    <button type="submit" value="Submit" class="apiUrl btn btn-success">Submit</button>
-                </div>
-
-            </form>
-            <input class="btn btn-default" type="button" value="Go back" onclick="history.back()">
-            <div id="data-link"></div>
+            </div>
         </div>
     </div>
-</div>
-
 {% endblock %}

@@ -1,151 +1,47 @@
 {% extends "base.html" %} {% block banner %}
-    <div class="container bg-3">
-        <div class="row">
-
-            <div class="col-sm-3">
-                <div class="card card-primary text-center streched-link">
-                    <a class="card-block stretched-link" href="{{ url_for('form.form') }}">
-                        <div class="card-body">
-                            <h2 class="card-title">Form <i class="fab fa-wpforms"></i></h2>
-                            <p class="card-text text-left">I dont think people will read this but okdhfasjfjdklsajl
-                                I dont think people will read this but okdhfasjfjdklsajl
-                                I dont think people will read this but okdhfasjfjdklsajl
-                                I dont think people will read this but okdhfasjfjdklsajl
-                                I dont think people will read this but okdhfasjfjdklsajl
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card card-primary text-center streched-link">
-                        <a class="card-block stretched-link" href="{{ url_for('api.api') }}">
-                            <div class="card-body">
-                                <h2 class="card-title">API <i class="fas fa-code"></i></h2>
-                                <p class="card-text text-left">I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card card-primary text-center streched-link">
-                        <a class="card-block stretched-link" href="{{ url_for('html.html') }}">
-                            <div class="card-body">
-                                <h2 class="card-title">HTML Table <i class="fas fa-table"></i></h2>
-                                <p class="card-text text-left">I dont think people will read this but
-                                    okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card card-primary text-center streched-link">
-                        <a class="card-block stretched-link" href="{{ url_for('pdf.pdf') }}">
-                            <div class="card-body">
-                                <h2 class="card-title">PDF <i class="far fa-file-pdf"></i></h2>
-                                <p class="card-text text-left">I dont think people will read this but
-                                    okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                    I dont think people will read this but okdhfasjfjdklsajl
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- TODO Remove Start -->
-        <div class="clearfix">
-            <div class="row" style="margin-bottom: 50px; margin-bottom: 50px">
-                <h1>${_____Card layout above VS Panel layout below_____}</h1>
-            </div>
-        </div>
-        <!-- TODO Remove End -->
-
+    <div class="container bg-3 movedown">
         <div class="row bg-3">
-            <div class="col-sm-3">
+            <div class="col-sm-5 col-sm-offset-1">
                 <div class="panel panel-success">
                     <div class="panel-heading">Form</div>
                     <div class="panel-body">
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
+                        Convert Form to CSV
                     </div>
                     <div class="panel-footer">
-                        <a href="{{ url_for('form.form') }}" class="btn btn-success btn-block"><i
-                                class="fab fa-wpforms"></i></a>
+                        <a href="{{ url_for('form.form') }}" class="btn btn-success btn-block"><i class="fab fa-wpforms"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-5">
                 <div class="panel panel-success">
                     <div class="panel-heading">API</div>
                     <div class="panel-body">
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
+                        Convert API to CSV
                     </div>
                     <div class="panel-footer">
-                        <a href="{{ url_for('api.api') }}" class="btn btn-success btn-block"><i
-                                class="fas fa-code"></i></a>
+                        <a href="{{ url_for('api.api') }}" class="btn btn-success btn-block"><i class="fas fa-code"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-5 col-sm-offset-1">
                 <div class="panel panel-success">
                     <div class="panel-heading">HTML</div>
                     <div class="panel-body">
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
+                        Convert HTML Table to CSV
                     </div>
                     <div class="panel-footer">
-                        <a href="{{ url_for('html.html') }}" class="btn btn-success btn-block"><i
-                                class="fas fa-table"></i></a>
+                        <a href="{{ url_for('html.html') }}" class="btn btn-success btn-block"><i class="fas fa-table"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-5">
                 <div class="panel panel-success">
                     <div class="panel-heading">PDF</div>
                     <div class="panel-body">
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
-                        I dont think people will read this but okdhfasjfjdklsajl
+                        Convert PDF Table to CSV
                     </div>
                     <div class="panel-footer">
-                        <a href="{{ url_for('pdf.pdf') }}" class="btn btn-success btn-block"><i
-                                class="far fa-file-pdf"></i></a>
+                        <a href="{{ url_for('pdf.pdf') }}" class="btn btn-success btn-block"><i class="far fa-file-pdf"></i></a>
                     </div>
                 </div>
             </div>
