@@ -7,8 +7,7 @@ p {
 }
 
 .bg-1 {
-    background-color: #5cb85c;
-    /* Bulldog Red */
+    background-color: #ffffff;
     color: #ffffff;
 }
 
@@ -39,6 +38,10 @@ p {
 .container-fluid {
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+.movedown {
+    margin-top: 5%;
 }
 
 .navbar {

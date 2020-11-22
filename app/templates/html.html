@@ -1,21 +1,29 @@
 {% extends "base.html" %} {% block body %}
+    <div class="container movedown">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h5>HTML</h5>
+                    </div>
+                    <div class="panel-body">
+                        <form id="form_search" action="{{ url_for('html.create_html_job') }}" method="post">
+                            <div class="form-group">
+                                <label for="url">URL</label>
+                                <input type="text" name="url" class="form-control">
+                            </div>
 
-<div class="container">
+                            <div class="form-group">
+                                <input type="submit" value="Convert CSV" class="btn btn-success btn-block">
+                            </div>
 
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-            <h1>HTML</h1>
-            <form id="form_search" action="{{ url_for('html.create_html_job') }}" method="post">
-                <div class="form-group">
-                    <label for="url">URL</label>
-                    <input type="text" name="url" class="form-control">
+                            <div class="form-group">
+                                <input type="button" value="Go back" onclick="history.back()" class="btn btn-default btn-block">
+                            </div>
+                        </form>
+                    </div>
                 </div>
-
-                <input type="submit" value="Submit" class="htmlUrl btn btn-success">
-            </form>
-            <br>
-            <input type="button" value="Go back" onclick="history.back()" class="btn btn-default">
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
