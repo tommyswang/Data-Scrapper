@@ -55,16 +55,22 @@ class ScrapeJob(db.Model):
         self.sys_created_on = datetime.datetime.now()
         self.sys_updated_on = datetime.datetime.now()
 
-    def detail_strs(self):
+    def detail_str(self):
         job_extra = self.detail_dict()
-        ret = []
+        pairs = []
         for k in job_extra:
-            ret.append(f"{k}: {job_extra[k]}")
+            pairs.append(f"{k}: {job_extra[k]}")
 
-        return ret
+        return ", ".join(pairs)
 
     def detail_dict(self):
-        return json.loads(self.extra)
+        try:
+            ret = json.loads(self.extra)
+            if not ret:
+                ret = {}
+            return ret
+        except:
+            return {}
 
     def run(self):
         self.status = JobStatus.RUNNING
@@ -78,7 +84,7 @@ class ScrapeJob(db.Model):
             elif self.jobType == JobType.PDF:
                 parser = self.__get_pdf_parser()
             elif self.jobType == JobType.API:
-                job_extra = json.loads(self.extra)
+                job_extra = self.detail_dict()
                 parser = APIParser(self.jobInput, job_extra['json_format'])
             elif self.jobType == JobType.FORM:
                 parser = self.__get_form_parser()

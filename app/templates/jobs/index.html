@@ -7,7 +7,7 @@
             <tr>
                 <th>ID</th>
                 <th>Type</th>
-                <th>File name</th>
+                <th>Info</th>
                 <th>Status</th>
                 <th>Creation time</th>
             </tr>
@@ -16,7 +16,11 @@
             <tr>
                 <td><a href="{{ url_for('jobs.detail', job_id=job.id) }}">{{ hash(job.id, 8) }}</a> </td>
                 <td>{{ job.jobType }}</td>
-                <td>{{ job.file.name }}</td>
+                <td>
+                    {% for k, v in job.detail_dict().items() %}
+                    <b>{{ k | capitalize }}</b>: {{ v }}<br />
+                    {% endfor %}
+                </td>
                 <td>{{ job.status }}</td>
                 <td>{{ job.sys_created_on }}</td>
             </tr>
