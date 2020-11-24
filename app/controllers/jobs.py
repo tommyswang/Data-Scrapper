@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, current_app, request, redirect
+from flask import Blueprint, render_template, current_app, request, redirect, url_for
 
 from models.scrape_job import ScrapeJob
 from models.job_attr import JobStatus
@@ -16,7 +16,11 @@ def short_hash(value, digits):
 @controller.route('/jobs', methods=['GET'])
 def index():
     jobs = ScrapeJob.query.order_by(ScrapeJob.sys_created_on.desc()).all()
-    return render_template("jobs/index.html", jobs=jobs, hash=short_hash, JobStatus=JobStatus)
+    return render_template(
+        "jobs/index.html", 
+        jobs=jobs, 
+        hash=short_hash, 
+        JobStatus=JobStatus)
 
 
 @controller.route('/job/<job_id>', methods=['GET'])
@@ -34,5 +38,13 @@ def detail(job_id):
             file_name=file_name)
     else:
         msg = 'Job does not exist'
-        path = referrer if referrer else '/jobs'
-        return redirect(path, error=msg)
+        if referrer:
+            return redirect(url_for(referrer, error=msg))
+        else:
+            jobs = ScrapeJob.query.order_by(ScrapeJob.sys_created_on.desc()).all()
+            return render_template(
+                'jobs/index.html', 
+                error=msg, 
+                jobs=jobs, 
+                hash=short_hash, 
+                JobStatus=JobStatus)
