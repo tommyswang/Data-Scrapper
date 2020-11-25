@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, current_app, request, redirect, url_for
+from flask import Blueprint, render_template, current_app, request, redirect, url_for, flash
 
 from models.scrape_job import ScrapeJob
 from models.job_attr import JobStatus
@@ -37,14 +37,6 @@ def detail(job_id):
             JobStatus=JobStatus,
             file_name=file_name)
     else:
-        msg = 'Job does not exist'
-        if referrer:
-            return redirect(url_for(referrer, error=msg))
-        else:
-            jobs = ScrapeJob.query.order_by(ScrapeJob.sys_created_on.desc()).all()
-            return render_template(
-                'jobs/index.html', 
-                error=msg, 
-                jobs=jobs, 
-                hash=short_hash, 
-                JobStatus=JobStatus)
+        path = referrer if referrer else url_for('jobs.index')
+        flash('Job does not exist', 'error')
+        return redirect(path)
