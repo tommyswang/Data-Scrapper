@@ -13,28 +13,32 @@ Elizabeth Shivers
 The user interface consists of multiple interfaces. The main interface is the home page where the users will select from four parsing options. 
 ![](./UI_1.png)
 
-Each parser will either have an option for the user to upload a file to parse or link an URL. ![](./UL_2.png)
-![](./UI_2.png){width=250}
+Each parser will either have an option for the user to upload a file to parse or link an URL.
+![](./UI_2.png)
+
+Once parsing has been completed, it will guide to an interface that will allow users to download as csv.
 ![](./UI_3.png)
-![](./UI_4.png)
-![](./UI_5.png)
 
-## 2 Process Description
+There will be a download page with a list of job and status.
 
-*Process description as a set of activities; for each activity, provide the following:*
 
-- *Activity name (verb or verb phrase)*
-- *Activity description (concise paragraph)*
-- *Entrance criteria (inputs needed for the activity)*
-- *Exit criteria (outputs produced by the activity and how you know it has been completed satisfactorily)*
+## 2 Functionality
 
-## 3 Team
+The web application would need to do the following:
 
-| Name | Role | Responsiblity |
-| ------ | ------ | ------ | 
-| SeGe Jung | Project Manager | responsible for understanding the project requirements and aligning the team to work efficienty towards project deliverables. Also responsible for creating project plan, roadmap, and resource allocation. |
-| Allen Leigh | Developer | |
-| Zahiduzzaman Biswas | Developer | |
-| Tommy Wang | QA | |
-| Hongyu Cheng | Developer | |
-| Kanishkah Anwari | Developer | |
+- Form function needs to take in pdf type form file and convert to csv.
+- API function needs to take in patient ID and output and convert to csv.
+- PDF function needs to take in PDF file and convert tables into csv.
+- HTML function needs to take in URL and convert tables into csv.
+- Job page with a list of parsing jobs and job status.
+
+## 3 Milestones
+
+Project Kick-off (TS#1) - 9/15/2020
+Requirement/Research (TS#2) - 9/29/2020
+Design (TS#3) - 10/6/2020
+Environment Setup (TS#4) - 10/18/2020
+Front End Implementation & Coding (TS#5) - 11/1/2020
+Baseline Implementation & Coding (TS#6) - 11/15/2020
+Optimization Implementation & Coding (TS#7) - 11/25/2020
+Final Implementation & Coding (TS#8) - 12/3/2020
