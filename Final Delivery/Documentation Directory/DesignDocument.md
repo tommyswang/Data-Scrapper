@@ -1,6 +1,7 @@
 # Design Document
 
 **Author**: HZ-TASK Force
+
 This document will provide description of the application, functionalities and milestones for completion.
 
 **Project goal**: Develop a web application that can convert tables from HTML, PDF, Form, and REST API data sources into CSV files. 
