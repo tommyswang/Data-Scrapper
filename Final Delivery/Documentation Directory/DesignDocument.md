@@ -35,10 +35,17 @@ The web application would need to do the following:
 ## 3 Milestones
 
 Project Kick-off (TS#1) - 9/15/2020
+
 Requirement/Research (TS#2) - 9/29/2020
+
 Design (TS#3) - 10/6/2020
+
 Environment Setup (TS#4) - 10/18/2020
+
 Front End Implementation & Coding (TS#5) - 11/1/2020
+
 Baseline Implementation & Coding (TS#6) - 11/15/2020
+
 Optimization Implementation & Coding (TS#7) - 11/25/2020
+
 Final Implementation & Coding (TS#8) - 12/3/2020
