@@ -10,7 +10,13 @@ Tia Pope
 Nick Thomas
 Elizabeth Shivers
 ## 1 User Interface
-![](./test-plan-screenshot.jpg)
+The user interface consists of multiple interfaces. The main interface is the home page where the users will select from four parsing options. 
+![](./UL_1.png)
+
+Each parser will either have an option for the user to upload a file to parse or link an URL. ![](./UL_2.png)
+![](./UL_3.png)
+![](./UL_4.png)
+![](./UL_5.png)
 
 ## 2 Process Description
 
