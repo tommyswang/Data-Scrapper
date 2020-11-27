@@ -7,9 +7,8 @@ This document will provide description of the application, functionalities and m
 **Project goal**: Develop a web application that can convert tables from HTML, PDF, Form, and REST API data sources into CSV files. 
 
 **Stakeholders**:
-Tia Pope
-Nick Thomas
-Elizabeth Shivers
+Tia Pope, Nick Thomas, Elizabeth Shivers
+
 ## 1 User Interface
 The user interface consists of multiple interfaces. The main interface is the home page where the users will select from four parsing options. 
 ![](./UI_1.png)
