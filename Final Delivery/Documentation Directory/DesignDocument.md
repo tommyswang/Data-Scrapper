@@ -14,10 +14,10 @@ The user interface consists of multiple interfaces. The main interface is the ho
 ![](./UI_1.png)
 
 Each parser will either have an option for the user to upload a file to parse or link an URL. ![](./UL_2.png)
-![](./UI_2.png =250x)
-![](./UI_3.png =250x)
-![](./UI_4.png =250x)
-![](./UI_5.png =250x)
+![](./UI_2.png) {width=250}
+![](./UI_3.png)
+![](./UI_4.png)
+![](./UI_5.png)
 
 ## 2 Process Description
 
