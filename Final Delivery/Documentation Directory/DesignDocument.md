@@ -11,12 +11,13 @@ Nick Thomas
 Elizabeth Shivers
 ## 1 User Interface
 The user interface consists of multiple interfaces. The main interface is the home page where the users will select from four parsing options. 
-![](./UL_1.png)
+![](./UI_1.png)
 
 Each parser will either have an option for the user to upload a file to parse or link an URL. ![](./UL_2.png)
-![](./UL_3.png)
-![](./UL_4.png)
-![](./UL_5.png)
+![](./UI_2.png)
+![](./UI_3.png)
+![](./UI_4.png)
+![](./UI_5.png)
 
 ## 2 Process Description
 
