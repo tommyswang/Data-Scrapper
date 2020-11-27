@@ -26,6 +26,7 @@ There will be a download page with a list of job and status.
 
 The web application would need to do the following:
 
+- App needs to be deployed to HDAP.
 - Form function needs to take in pdf type form file and convert to csv.
 - API function needs to take in patient ID and output and convert to csv.
 - PDF function needs to take in PDF file and convert tables into csv.
