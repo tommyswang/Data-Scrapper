@@ -4,3 +4,4 @@ venv/
 __init__.pyc
 app/files/
 .idea/
+Pipfile

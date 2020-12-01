@@ -11,6 +11,8 @@ def html():
 @controller.route('/html', methods=['POST'])
 def create_html_job():
     url = request.form['url']
+    if url == '':
+        return render_template("html.html", error="FAILED. ERROR INFO: No url found.")
 
     extra = {
         "url": url

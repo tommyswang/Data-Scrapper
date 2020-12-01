@@ -17,6 +17,8 @@ def create_form_job():
     file = request.files['file']
 
     if file.filename:
+        if '.pdf' not in file.filename:
+            return render_template("form.html", error="JOB FAILED. ERROR INFO: File type is not supported.")
         sf = ScrapeFile(file)
 
         extra = {
@@ -32,5 +34,6 @@ def create_form_job():
         job.run()
 
         return redirect(url_for('jobs.detail', job_id=job.id))
+
     else:
         return render_template("form.html", error="Job Failed. ERROR INFO: NoFileFoundError. Upload the file and try again.")
