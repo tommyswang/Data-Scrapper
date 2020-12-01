@@ -28,7 +28,7 @@
                         {% endif %} {% if job.status == JobStatus.RUNNING %}
                         <div class="lds-dual-ring"></div>
                         {% elif file_name != None %}
-                        <a href=" {{ url_for('download.download', file_name=file_name) }} " class="btn btn-success">Download CSV</a> {% endif %}
+                        <a href="{{ url_for('download.download', file_name=file_name) }}" class="btn btn-success">Download CSV</a> {% endif %}
                     </div>
                     <div class="panel-footer text-center">
                         <a href="{{ url_for('home.index') }}">Go Back</button></a>
