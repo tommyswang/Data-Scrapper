@@ -19,6 +19,9 @@ class FormParser:
         for page in pdf.pages:
           all_page += page.extract_text()
 
+        if 'Human Infection with 2019 Novel Coronavirus' not in all_page:
+          return [pd.DataFrame(all_page.split('\n')).to_csv()]
+
         # define all the fields
         fields = {"CDC 2019-nCoV ID" : "CDC 2019-nCoV ID:(.*) \n",
           'Patient first name' : 'Patient first name(.*) P',
