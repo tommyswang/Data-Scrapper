@@ -1,7 +1,8 @@
 {% extends "base.html" %} {% block banner %}
-    <div class="container bg-3 movedown">
-        <div class="row bg-3">
-            <div class="col-sm-5 col-sm-offset-1">
+<div class="container bg-3 movedown">
+    <div class="row bg-3 home-cards">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="col-sm-6">
                 <div class="panel panel-success">
                     <div class="panel-heading">Form</div>
                     <div class="panel-body">
@@ -12,7 +13,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-6">
                 <div class="panel panel-success">
                     <div class="panel-heading">API</div>
                     <div class="panel-body">
@@ -23,7 +24,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-5 col-sm-offset-1">
+        </div>
+        <div class="col-md-10 col-md-offset-1">
+            <div class="col-sm-6">
                 <div class="panel panel-success">
                     <div class="panel-heading">HTML</div>
                     <div class="panel-body">
@@ -34,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-6">
                 <div class="panel panel-success">
                     <div class="panel-heading">PDF</div>
                     <div class="panel-body">
@@ -47,4 +50,11 @@
             </div>
         </div>
     </div>
+</div>
+
+<style>
+    .panel-body {
+        min-height:
+    }
+</style>
 {% endblock %}

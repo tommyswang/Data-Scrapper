@@ -242,3 +242,7 @@ footer {
 .panel-heading {
     font-weight: 600;
 }
+
+.home-cards .panel-body {
+    min-height: 80px;
+}
