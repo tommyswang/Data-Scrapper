@@ -1,26 +1,31 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from lib.parsers.form_parser import FormParser
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from db import db
 from models.scrape_file import ScrapeFile
 from models.scrape_job import ScrapeJob
 from models.job_attr import JobType
+from lib.parsers.form_parser import FormParser
 
 controller = Blueprint('form', __name__)
 
 
 @controller.route('/form', methods=['GET'])
 def form():
-    return render_template("form.html")
+    form_names = FormParser.TEMPLATE_NAMES
+    return render_template("form.html", form_names=form_names)
 
 
 @controller.route('/form', methods=['POST'])
 def create_form_job():
     file = request.files['file']
+    form_name = request.form['form-type']
 
     if file.filename:
         sf = ScrapeFile(file)
 
         extra = {
-            'file name': file.filename
+            'file name': file.filename,
+            'form name': form_name
         }
         job = ScrapeJob(JobType.FORM, sf.id, extra)
 
@@ -33,4 +38,5 @@ def create_form_job():
 
         return redirect(url_for('jobs.detail', job_id=job.id))
     else:
-        return render_template("form.html", error="Job Failed. ERROR INFO: NoFileFoundError. Upload the file and try again.")
+        flash("Job Failed. ERROR INFO: NoFileFoundError. Upload the file and try again.", 'error')
+        return redirect('form.form')

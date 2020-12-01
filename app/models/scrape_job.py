@@ -21,7 +21,6 @@ import json
 
 HASH_DIGITS = 8
 
-
 class ScrapeJob(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     status = db.Column(db.String(50), unique=False)
@@ -129,7 +128,10 @@ class ScrapeJob(db.Model):
             id=self.jobInput).first()
 
         local_file_path = str(root_path) + input_file_obj.path
-        return FormParser(local_file_path)
+
+        job_extra = self.detail_dict()
+        template_name = job_extra['form name']
+        return FormParser(local_file_path, template_name)
 
     def __zip_csv_files(self, outputs):
         zip_name = str(self.id) + '.zip'
