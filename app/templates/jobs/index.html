@@ -1,4 +1,15 @@
 {% extends "base.html" %} {% block body %}
+
+{% with errors = get_flashed_messages(with_categories=true) %}
+  {% if errors %}
+    <div class="container">
+    {% for category, error in errors %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
 <div class="container h-100">
     <div class="d-flex h-100">
         <h2>All Jobs</h2>

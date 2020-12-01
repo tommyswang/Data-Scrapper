@@ -238,3 +238,7 @@ footer {
 .content {
     min-height: calc(100vh - 165px);
 }
+
+.panel-heading {
+    font-weight: 600;
+}

@@ -25,6 +25,8 @@ def create_app(testing=False):
     app.config.from_object(__name__)
     app.logger.setLevel(logging.INFO)
     app.logger.info(f"Environment: {env_name}")
+    # For Flash Messages
+    app.secret_key = 'b7bb85a76fb487473409'
     load_config(app)
 
     CORS(app, resources={r'/*': {'origins': '*'}})
