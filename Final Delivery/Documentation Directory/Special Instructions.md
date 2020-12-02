@@ -1,0 +1,34 @@
+Below is a complete instruction for setting up the application on local. The instruction is tested on Ubuntu.
+
+Before running, please ensure some dependencies are installed:
+
+* Python 3 with `pip3`
+* Java 11 or above
+* MySql server
+
+On Debian based Linux system, you should be able to install them using:
+
+```
+sudo apt-get update && apt-get install -y software-properties-common && \
+sudo add-apt-repository ppa:deadsnakes/ppa && \
+sudo apt-get update && \
+sudo apt-get install -y python3.8 python3-pip default-jre mysql-server && \
+sudo service mysql start
+```
+
+After pulling the git repo, please navigate to the directory of the repo in terminal, and run the commands below..
+
+```
+cd app
+
+# setup database 
+make setup 
+
+# install dependencies
+make update
+
+# run server on local in development mode
+make server
+```
+
+You should be able to see the web server running.
