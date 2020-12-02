@@ -9,7 +9,7 @@
 **GitHub Link**: https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper 
 
 # Table of Contents
-1. [Live Site](#example)
+1. [Live Site]
 2. [Functionalities](#example4)
 3. [Local Development](#example2)
 4. [Deploying to HDAP](#example3)
