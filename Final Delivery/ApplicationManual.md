@@ -8,13 +8,20 @@
 
 **GitHub Link**: https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper 
 
+# Table of Contents
+1. [Live Site](#example)
+2. [Functionalities](#example4)
+3. [Local Development](#example2)
+4. [Deploying to HDAP](#example3)
 
+## Live Site
 (Connect to GaTech VPN before connecting to the sites below)
 
 * Live site: https://apps.hdap.gatech.edu/data-scrapper-app/
 * CI: https://drone.hdap.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper/ (Need to be on Ga Tech Network)
 * Rancher: https://rancher.hdap.gatech.edu/ (Need to be on Ga Tech Network)
 
+## Functionalities
 ## Description
 DataScrapper application takes in a HTML URL, JSON URL, FORM, and PDF data and creates a CSV file for users to then use for their projects. 
 
@@ -42,8 +49,7 @@ DataScrapper application takes in a HTML URL, JSON URL, FORM, and PDF data and c
 * The application will scrape the PDF page for Tables and create a CSV for each table found
 * After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
 
-
-## Local development
+## Local Development
 
 **Pre-requisites**
 
@@ -112,9 +118,10 @@ docker stop ds
 docker rm ds
 ```
 
-## Deployment to HDAP
+## Deploying to HDAP
 
 Any update to the `deploy` branch will automatically trigger a deployment to HDAP.
+
 
 
 
