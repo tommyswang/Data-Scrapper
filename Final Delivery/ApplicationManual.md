@@ -1,4 +1,4 @@
-# Application Manual
+# Application Manual - Data Scraper
 
 **Team Name**: HZ-TASK Force 
 
