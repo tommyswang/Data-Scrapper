@@ -1,3 +1,13 @@
+# Special Instructions
+
+**Team Name**: HZ-TASK Force 
+
+**Team Members**: Allen Leigh, Hongyu Cheng, Kanishkah Anwari, SeGe Jung, Tommy Wang, Zahiduzzaman Biswas 
+
+**Project Name**: Data Scraper 
+
+**GitHub Link**: https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper 
+
 Below is a complete instruction for setting up the application on local. The instruction is tested on Ubuntu.
 
 Before running, please ensure some dependencies are installed:
