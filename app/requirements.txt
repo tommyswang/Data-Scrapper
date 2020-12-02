@@ -12,3 +12,4 @@ lxml==4.6.1
 zipfile38==0.0.2
 gunicorn==19.9.0
 pdfplumber==0.5.24
+html5lib==1.1
