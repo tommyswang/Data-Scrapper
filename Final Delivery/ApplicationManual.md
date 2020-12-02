@@ -15,6 +15,34 @@
 * CI: https://drone.hdap.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper/ (Need to be on Ga Tech Network)
 * Rancher: https://rancher.hdap.gatech.edu/ (Need to be on Ga Tech Network)
 
+## Description
+DataScrapper application takes in a HTML URL, JSON URL, FORM, and PDF data and creates a CSV file for users to then use for their projects. 
+
+## HTML Input
+* On the home page click on HTML card
+* Enter in a valid url i.e http://google.com, the URL should render an HTML page
+* The application will scrape the HTML page for Tables and create a CSV for each table found
+* After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
+
+## Form Input
+* On the home page click on Form card
+* Select Form template
+* Upload PDF of Form
+* After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
+
+## API Input
+* On the home page click on API card
+* Enter in a valid url i.e http://hapi.fhir.org/baseR4/Patient/1215584, the URL should render json
+* The json options are `flat` or `structured`
+* After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
+
+## PDF Input
+* On the home page click on PDF card
+* Upload valid PDF with tables
+* The application will scrape the PDF page for Tables and create a CSV for each table found
+* After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
+
+
 ## Local development
 
 **Pre-requisites**
@@ -89,5 +117,4 @@ docker rm ds
 Any update to the `deploy` branch will automatically trigger a deployment to HDAP.
 
 
-## How to use Data Scrapper
 
