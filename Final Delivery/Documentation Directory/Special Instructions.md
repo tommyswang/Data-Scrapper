@@ -32,3 +32,14 @@ make server
 ```
 
 You should be able to see the web server running.
+
+### Troubleshooting on HDAP live site
+
+If you encounter this error:
+
+```
+Bad gateway
+Apache/2.4.18 (Ubuntu) Server at apps.hdap.gatech.edu Port 443
+```
+
+We suspect it is related to the configuration of HDAP Kubernetes node. Please compressor your uploading file and try again, typically less than 1MB.
