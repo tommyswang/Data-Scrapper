@@ -9,24 +9,11 @@
 **GitHub Link**: https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper 
 
 
-
-# Data-Scrapper
-
 (Connect to GaTech VPN before connecting to the sites below)
 
 * Live site: https://apps.hdap.gatech.edu/data-scrapper-app/
 * CI: https://drone.hdap.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper/ (Need to be on Ga Tech Network)
 * Rancher: https://rancher.hdap.gatech.edu/ (Need to be on Ga Tech Network)
-
-
-## Add names here (Alphabetically):
-
-* Allen Leigh
-* Hongyu Cheng
-* Kanishkah Anwari
-* SeGe Jung
-* Tommy Wang
-* Zahiduzzaman Biswas
 
 ## Local development
 
@@ -100,3 +87,7 @@ docker rm ds
 ## Deployment to HDAP
 
 Any update to the `deploy` branch will automatically trigger a deployment to HDAP.
+
+
+## How to use Data Scrapper
+
