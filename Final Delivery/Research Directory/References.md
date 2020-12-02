@@ -1,4 +1,4 @@
-# Background & Research
+# References
 
 **Team Name**: HZ-TASK Force 
 
@@ -8,7 +8,7 @@
 
 **GitHub Link**: https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper 
 
-References:
+
 1.	Interview with Andrea Mansur, and Grishma A. Kharod, Center of disease Control and Prevention. Dec 1, 2020
 2.	Pypdf Documentation, https://pythonhosted.org/PyPDF2/, 
 3.	PdfMiner Documentation, https://pdfminersix.readthedocs.io/en/latest/
