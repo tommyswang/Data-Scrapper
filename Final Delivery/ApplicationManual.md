@@ -32,6 +32,7 @@ DataScrapper application takes in a HTML URL, JSON URL, FORM, and PDF data and c
 * After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
 
 ### 2.2 Form Input
+* [Click here for detailed instructions](https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper/blob/master/Final%20Delivery/How%20to%20Parse%20HTML%20Tables%20from%20a%20Website%20URL.pdf)
 * On the home page click on Form card
 * Select Form template
 * Upload PDF of Form
