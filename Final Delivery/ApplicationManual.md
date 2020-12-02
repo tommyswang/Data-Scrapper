@@ -25,7 +25,7 @@
 DataScrapper application takes in a HTML URL, JSON URL, FORM, and PDF data and creates a CSV file for users to then use for their projects. 
 
 ### 2.1 HTML Input
-* [Click here for detailed instructions](/Final Delivery/How to Parse HTML Tables from a Website URL.pdf)
+* [Click here for detailed instructions](https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper/blob/master/Final%20Delivery/How%20to%20Parse%20HTML%20Tables%20from%20a%20Website%20URL.pdf)
 * On the home page click on HTML card
 * Enter in a valid url i.e http://google.com, the URL should render an HTML page
 * The application will scrape the HTML page for Tables and create a CSV for each table found
