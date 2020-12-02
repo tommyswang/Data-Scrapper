@@ -9,50 +9,52 @@
 **GitHub Link**: https://github.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper 
 
 # Table of Contents
-1. [Live Site]
-2. [Functionalities](#example4)
-3. [Local Development](#example2)
-4. [Deploying to HDAP](#example3)
+1. Live Site
+2. Functionalities
+3. Local Development
+4. Deploying to HDAP
 
-## Live Site
+## 1. Live Site
 (Connect to GaTech VPN before connecting to the sites below)
 
 * Live site: https://apps.hdap.gatech.edu/data-scrapper-app/
 * CI: https://drone.hdap.gatech.edu/gt-cs6440-hit-fall2020/Data-Scrapper/ (Need to be on Ga Tech Network)
 * Rancher: https://rancher.hdap.gatech.edu/ (Need to be on Ga Tech Network)
 
-## Functionalities
-## Description
+## 2. Functionalities
 DataScrapper application takes in a HTML URL, JSON URL, FORM, and PDF data and creates a CSV file for users to then use for their projects. 
 
-## HTML Input
+### 2.1 HTML Input
 * On the home page click on HTML card
 * Enter in a valid url i.e http://google.com, the URL should render an HTML page
 * The application will scrape the HTML page for Tables and create a CSV for each table found
 * After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
 
-## Form Input
+### 2.2 Form Input
 * On the home page click on Form card
 * Select Form template
 * Upload PDF of Form
 * After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
 
-## API Input
+### 2.3 API Input
 * On the home page click on API card
 * Enter in a valid url i.e http://hapi.fhir.org/baseR4/Patient/1215584, the URL should render json
 * The json options are `flat` or `structured`
 * After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
 
-## PDF Input
+### 2.4 PDF Input
 * On the home page click on PDF card
 * Upload valid PDF with tables
 * The application will scrape the PDF page for Tables and create a CSV for each table found
 * After Click Convert CSV the application will prompt you that your job is done and a link to download your CSV
 
-## Local Development
+### 2.5 History Page
+* History button is located on the top right corner of the app
+* Users can view job status and access download links to csv files
+
+## 3. Local Development
 
 **Pre-requisites**
-
 * Python3, pip3
 * Docker
 * MySQL server
@@ -118,9 +120,9 @@ docker stop ds
 docker rm ds
 ```
 
-## Deploying to HDAP
+## 4. Deploying to HDAP
 
-Any update to the `deploy` branch will automatically trigger a deployment to HDAP.
+Merge master branch into the `deploy` branch, which will automatically trigger a deployment to HDAP.
 
 
 
